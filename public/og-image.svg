@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">IRISE Open Graph Image</title>
+  <desc id="desc">A dark themed open graph image with the IRISE wordmark and a green-blue gradient accent.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00ff88"/>
+      <stop offset="1" stop-color="#00c8ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="40%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#00ff88" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="520" cy="220" r="320" fill="url(#glow)"/>
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="rgba(21,21,21,0.85)" stroke="rgba(255,255,255,0.08)" />
+  <rect x="70" y="70" width="1060" height="10" fill="url(#accent)"/>
+
+  <g font-family="Outfit, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" fill="#ffffff">
+    <text x="120" y="300" font-size="84" font-weight="800">IRISE</text>
+    <text x="120" y="360" font-size="28" font-weight="500" fill="rgba(176,176,176,0.95)">
+      Nature's Design, Future's Innovation
+    </text>
+  </g>
+
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" fill="rgba(176,176,176,0.9)">
+    <text x="120" y="460" font-size="20" font-weight="500">Cockroach-inspired bio‑mimetic robotics</text>
+  </g>
+</svg>
+

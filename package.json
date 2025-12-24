@@ -1,8 +1,8 @@
 {
-    "name": "irise-website",
+    "name": "irise-capital-website",
     "type": "module",
     "version": "1.0.0",
-    "description": "IRISE - Cockroach-Inspired Bio-Mimetic Robot Website",
+    "description": "Irise Capital - Empowering Informed Investment Decisions",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",

@@ -24,20 +24,20 @@ export interface Props {
 }
 
 const {
-  title = 'IRISE - Cockroach-Inspired Bio-Mimetic Robot',
-  description = 'IRISE is a revolutionary bio-mimetic robot inspired by cockroach biology. Featuring advanced locomotion, extreme durability, and adaptive intelligence for search & rescue, exploration, and industrial applications.',
+  title = 'Irise Capital | Empowering Informed Investment Decisions',
+  description = 'Irise Capital is a cutting-edge Investment Advisory Firm empowering clients with thoughtful investment advice in stocks, mutual funds, and cryptocurrency.',
   image = '/og-image.jpg',
   type = 'website',
   publishedTime,
   modifiedTime,
-  author = 'IRISE Team',
+  author = 'Irise Capital',
   noindex = false,
   nofollow = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
-const siteName = 'IRISE';
+const siteName = 'Irise Capital';
 
 // JSON-LD Structured Data for LLM optimization
 const jsonLd = {
@@ -54,7 +54,7 @@ const jsonLd = {
       }
     },
     {
-      '@type': 'Organization',
+      '@type': 'FinancialService',
       '@id': `${Astro.site}#organization`,
       'name': siteName,
       'url': Astro.site?.toString(),
@@ -62,9 +62,16 @@ const jsonLd = {
         '@type': 'ImageObject',
         'url': `${Astro.site}favicon.svg`
       },
-      'sameAs': [
-        // Add social media URLs here
-      ]
+      'priceRange': '$$',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Hyderabad',
+        'addressCountry': 'IN'
+      },
+      'founder': {
+        '@type': 'Person',
+        'name': 'Raajveer Nath'
+      }
     },
     {
       '@type': 'WebPage',
@@ -74,20 +81,7 @@ const jsonLd = {
       'description': description,
       'isPartOf': {
         '@id': `${Astro.site}#website`
-      },
-      ...(publishedTime && { 'datePublished': publishedTime }),
-      ...(modifiedTime && { 'dateModified': modifiedTime }),
-    },
-    {
-      '@type': 'Product',
-      'name': 'IRISE Robot',
-      'description': 'A cockroach-inspired bio-mimetic robot featuring advanced locomotion systems, extreme durability, and adaptive AI intelligence.',
-      'brand': {
-        '@type': 'Brand',
-        'name': 'IRISE'
-      },
-      'category': 'Robotics',
-      'keywords': 'bio-mimetic robot, cockroach robot, search and rescue robot, exploration robot, adaptive robotics'
+      }
     }
   ]
 };
@@ -131,7 +125,7 @@ const robotsContent = [
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 <!-- Additional SEO -->
-<meta name="theme-color" content="#00ff88" />
+<meta name="theme-color" content="#0a0a0a" />
 <meta name="color-scheme" content="dark light" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="manifest" href="/site.webmanifest" />

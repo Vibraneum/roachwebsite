@@ -1,25 +1,22 @@
 ---
 /**
  * Header Component
- * Responsive navigation with mobile menu support
+ * Responsive navigation with mobile menu and theme toggle
  */
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#features', label: 'Features' },
-  { href: '#technology', label: 'Technology' },
-  { href: '#specs', label: 'Specs' },
-  { href: '#team', label: 'Team' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#contact', label: 'Contact' },
 ];
 ---
 
 <header class="header">
   <div class="header__container container">
     <!-- Logo -->
-    <a href="/" class="header__logo" aria-label="IRISE Home">
-      <img src="/favicon.svg" alt="" width="40" height="40" />
-      <span class="header__logo-text">IRISE</span>
+    <a href="/" class="header__logo" aria-label="Irise Capital Home">
+      <span class="header__logo-text">Irise Capital</span>
     </a>
 
     <!-- Desktop Navigation -->
@@ -33,20 +30,39 @@ const navLinks = [
       </ul>
     </nav>
 
-    <!-- CTA Button -->
-    <a href="#contact" class="btn btn-primary header__cta">
-      Get in Touch
-    </a>
-
-    <!-- Mobile Menu Button -->
-    <button 
-      class="header__menu-btn" 
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span class="header__menu-icon"></span>
-    </button>
+    <!-- Actions -->
+    <div class="header__actions">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      
+      <!-- CTA Button (Desktop) -->
+      <a href="/#contact" class="btn btn-primary header__cta">Get Started</a>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        class="header__menu-btn" 
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="header__menu-icon"></span>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile Menu -->
@@ -59,7 +75,7 @@ const navLinks = [
           </li>
         ))}
         <li>
-          <a href="#contact" class="btn btn-primary header__mobile-cta">Get in Touch</a>
+          <a href="/#contact" class="btn btn-primary header__mobile-cta">Get Started</a>
         </li>
       </ul>
     </nav>
@@ -73,10 +89,13 @@ const navLinks = [
     left: 0;
     right: 0;
     z-index: var(--z-fixed);
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .header--scrolled {
+    box-shadow: var(--shadow-md);
   }
 
   .header__container {
@@ -90,18 +109,18 @@ const navLinks = [
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    color: var(--color-text-primary);
-    font-weight: var(--font-bold);
-    font-size: var(--text-xl);
     text-decoration: none;
   }
 
   .header__logo-text {
     font-family: var(--font-display);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-brand-primary);
+  }
+
+  [data-theme="dark"] .header__logo-text {
+    color: #fff;
   }
 
   .header__nav {
@@ -127,25 +146,36 @@ const navLinks = [
     text-decoration: none;
     transition: color var(--transition-fast);
     position: relative;
+    padding: var(--space-2) 0;
   }
 
   .header__nav-link::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-primary);
+    background: var(--color-brand-accent);
     transition: width var(--transition-base);
   }
 
   .header__nav-link:hover {
-    color: var(--color-text-primary);
+    color: var(--color-brand-primary);
+  }
+
+  [data-theme="dark"] .header__nav-link:hover {
+    color: #fff;
   }
 
   .header__nav-link:hover::after {
     width: 100%;
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
   }
 
   .header__cta {
@@ -242,27 +272,68 @@ const navLinks = [
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   .header__mobile-nav-link {
     display: block;
     color: var(--color-text-primary);
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
     text-decoration: none;
-    padding: var(--space-2) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
     transition: color var(--transition-fast);
   }
 
   .header__mobile-nav-link:hover {
-    color: var(--color-primary);
+    color: var(--color-brand-accent);
   }
 
   .header__mobile-cta {
     margin-top: var(--space-4);
     width: 100%;
+    text-align: center;
+  }
+
+  /* Theme toggle styles */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .theme-toggle:hover {
+    background: var(--color-bg-tertiary);
+  }
+
+  .theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-text-primary);
+  }
+
+  .theme-toggle .sun-icon {
+    display: none;
+  }
+
+  .theme-toggle .moon-icon {
+    display: block;
+  }
+
+  [data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+  }
+
+  [data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
   }
 </style>
 
@@ -290,17 +361,34 @@ const navLinks = [
 
   // Header scroll effect
   const header = document.querySelector('.header');
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    
-    if (currentScroll > 100) {
+    if (window.scrollY > 50) {
       header?.classList.add('header--scrolled');
     } else {
       header?.classList.remove('header--scrolled');
     }
-    
-    lastScroll = currentScroll;
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  
+  function setTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  
+  // Load saved theme or system preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else if (prefersDark.matches) {
+    setTheme('dark');
+  }
+  
+  themeToggle?.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
   });
 </script>
