@@ -194,7 +194,7 @@
       document.body.style.overflow = 'hidden';
       try { localStorage.setItem(exitKey, '1'); } catch {}
       // focus close for accessibility
-      exitEl.querySelector('[data-close="exit"]')?.focus?.();
+      (exitEl.querySelector('[data-close="exit"]') as HTMLElement)?.focus();
     }
 
     function closeExit() {
