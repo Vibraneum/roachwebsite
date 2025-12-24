@@ -1,0 +1,32 @@
+# Sitemap for IRISE Website
+# Auto-generated sitemap will be at /sitemap-index.xml after build
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://irise.vibraneum.com/sitemap-index.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /404
+
+# Allow AI/LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /

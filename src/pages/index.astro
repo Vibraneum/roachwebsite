@@ -1,0 +1,497 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="IRISE - Cockroach-Inspired Bio-Mimetic Robot"
+  description="IRISE is a revolutionary bio-mimetic robot inspired by cockroach biology. Featuring advanced locomotion, extreme durability, and adaptive intelligence for search & rescue, exploration, and industrial applications."
+>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__container container">
+      <div class="hero__content">
+        <span class="hero__badge animate-fade-in">Bio-Mimetic Robotics</span>
+        <h1 class="hero__title animate-slide-up">
+          <span class="text-gradient">IRISE</span>
+          <br />
+          Nature's Design, <br />Future's Innovation
+        </h1>
+        <p class="hero__description animate-slide-up">
+          A revolutionary bio-mimetic robot inspired by the world's most resilient creature. 
+          Built for extreme environments, powered by adaptive AI.
+        </p>
+        <div class="hero__cta animate-slide-up">
+          <a href="#features" class="btn btn-primary btn-lg">Explore Features</a>
+          <a href="#contact" class="btn btn-secondary btn-lg">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__robot-placeholder animate-glow">
+          <!-- Robot image/3D model will go here -->
+          <div class="hero__robot-glow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about__container container">
+      <div class="about__header">
+        <span class="section-tag">About IRISE</span>
+        <h2 class="section-title">Inspired by <span class="text-gradient">Nature</span></h2>
+        <p class="section-description">
+          The cockroach has survived for over 300 million years, adapting to every environment on Earth. 
+          IRISE harnesses this evolutionary perfection.
+        </p>
+      </div>
+      <div class="about__grid">
+        <div class="about__card card">
+          <div class="about__icon">🔬</div>
+          <h3>Bio-Mimetic Design</h3>
+          <p>Engineered to replicate the cockroach's incredible agility, stability, and survival instincts.</p>
+        </div>
+        <div class="about__card card">
+          <div class="about__icon">⚡</div>
+          <h3>Adaptive Intelligence</h3>
+          <p>AI-powered decision making that learns and adapts to any environment in real-time.</p>
+        </div>
+        <div class="about__card card">
+          <div class="about__icon">🛡️</div>
+          <h3>Extreme Durability</h3>
+          <p>Built to withstand harsh conditions, impacts, and environmental challenges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="features__container container">
+      <div class="features__header">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Unmatched <span class="text-gradient">Features</span></h2>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card card">
+          <h4>6-Leg Locomotion</h4>
+          <p>Advanced hexapod movement system for unparalleled stability and terrain adaptability.</p>
+        </div>
+        <div class="feature-card card">
+          <h4>360° Awareness</h4>
+          <p>Multi-sensor array providing complete environmental awareness and obstacle detection.</p>
+        </div>
+        <div class="feature-card card">
+          <h4>Self-Righting</h4>
+          <p>Automatic recovery from any orientation, just like its biological inspiration.</p>
+        </div>
+        <div class="feature-card card">
+          <h4>Swarm Capable</h4>
+          <p>Coordinate with multiple units for complex search and mapping operations.</p>
+        </div>
+        <div class="feature-card card">
+          <h4>Compact Design</h4>
+          <p>Navigate through tight spaces and confined environments with ease.</p>
+        </div>
+        <div class="feature-card card">
+          <h4>Long Endurance</h4>
+          <p>Extended operation time with efficient power management systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="technology" id="technology">
+    <div class="technology__container container">
+      <div class="technology__header">
+        <span class="section-tag">Technology</span>
+        <h2 class="section-title">Advanced <span class="text-gradient">Engineering</span></h2>
+      </div>
+      <div class="technology__content">
+        <p>IRISE combines cutting-edge robotics, AI, and bio-mimetic principles to create a robot that doesn't just move—it thinks, adapts, and survives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs Section -->
+  <section class="specs" id="specs">
+    <div class="specs__container container">
+      <div class="specs__header">
+        <span class="section-tag">Specifications</span>
+        <h2 class="section-title">Technical <span class="text-gradient">Details</span></h2>
+      </div>
+      <div class="specs__grid">
+        <div class="spec-item">
+          <span class="spec-value">6</span>
+          <span class="spec-label">Legs</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">18</span>
+          <span class="spec-label">DOF</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">2.5</span>
+          <span class="spec-label">kg Weight</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-value">4h+</span>
+          <span class="spec-label">Runtime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team" id="team">
+    <div class="team__container container">
+      <div class="team__header">
+        <span class="section-tag">The Team</span>
+        <h2 class="section-title">Meet the <span class="text-gradient">Innovators</span></h2>
+        <p class="section-description">
+          A passionate team of engineers, researchers, and innovators bringing IRISE to life.
+        </p>
+      </div>
+      <!-- Team members will be added here -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact__container container">
+      <div class="contact__header">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+        <p class="section-description">
+          Interested in IRISE? Have questions? We'd love to hear from you.
+        </p>
+      </div>
+      <div class="contact__form-wrapper">
+        <form class="contact__form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--header-height);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero__container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .hero__badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__title {
+    font-size: var(--text-5xl);
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin-bottom: var(--space-8);
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .hero__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__robot-placeholder {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero__scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--color-primary), transparent);
+    animation: pulse 2s infinite;
+  }
+
+  /* Section Styling */
+  section {
+    padding: var(--space-24) 0;
+  }
+
+  .section-tag {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+  }
+
+  .section-title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .section-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+  }
+
+  /* About Section */
+  .about__header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+  }
+
+  .about__header .section-description {
+    margin: 0 auto;
+  }
+
+  .about__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .about__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .about__card {
+    text-align: center;
+  }
+
+  .about__icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Features Section */
+  .features {
+    background: var(--color-bg-secondary);
+  }
+
+  .features__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .features__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .features__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Technology Section */
+  .technology__header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .technology__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Specs Section */
+  .specs {
+    background: var(--color-bg-secondary);
+  }
+
+  .specs__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .specs__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .specs__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .spec-item {
+    text-align: center;
+  }
+
+  .spec-value {
+    display: block;
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+  }
+
+  .spec-label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: var(--space-2);
+  }
+
+  /* Team Section */
+  .team__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .team__header .section-description {
+    margin: 0 auto;
+  }
+
+  /* Contact Section */
+  .contact {
+    background: var(--color-bg-secondary);
+  }
+
+  .contact__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .contact__header .section-description {
+    margin: 0 auto;
+  }
+
+  .contact__form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .form-group label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: var(--space-4);
+    background: var(--color-bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    font-family: var(--font-primary);
+    outline: none;
+    transition: border-color var(--transition-fast);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--color-primary);
+  }
+
+  .contact__form button {
+    align-self: flex-start;
+  }
+</style>

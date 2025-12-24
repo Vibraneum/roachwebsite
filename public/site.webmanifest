@@ -1,0 +1,16 @@
+{
+    "name": "IRISE",
+    "short_name": "IRISE",
+    "description": "Cockroach-Inspired Bio-Mimetic Robot - Revolutionizing robotics with nature's most resilient design",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#00ff88",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

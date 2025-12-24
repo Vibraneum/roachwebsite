@@ -1,0 +1,369 @@
+/*
+ * IRISE Design System - Global Styles
+ * ====================================
+ * A modern, dark-theme design system for the IRISE robot website
+ */
+
+/* ===== CSS Custom Properties (Design Tokens) ===== */
+:root {
+  /* Colors - Primary */
+  --color-primary: #00ff88;
+  --color-primary-dark: #00cc6a;
+  --color-primary-light: #66ffb3;
+  --color-primary-glow: rgba(0, 255, 136, 0.3);
+  
+  /* Colors - Neutrals */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-card: #151515;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #666666;
+  
+  /* Colors - Accents */
+  --color-accent-blue: #00c8ff;
+  --color-accent-purple: #a855f7;
+  --color-accent-orange: #ff8c00;
+  --color-error: #ff4d4d;
+  --color-success: #00ff88;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', var(--font-primary);
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Font Sizes - Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2.3vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.5rem + 3.75vw, 3.5rem);
+  --text-5xl: clamp(3rem, 2rem + 5vw, 5rem);
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 20px var(--color-primary-glow);
+  --shadow-glow-lg: 0 0 40px var(--color-primary-glow);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Z-Index Scale */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-tooltip: 600;
+  
+  /* Layout */
+  --max-width: 1400px;
+  --header-height: 80px;
+}
+
+/* ===== CSS Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+}
+
+/* ===== Typography Base ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* ===== Utility Classes ===== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-lg {
+  box-shadow: var(--shadow-glow-lg);
+}
+
+/* ===== Button Styles ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: var(--color-bg-primary);
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);
+}
+
+/* ===== Card Styles ===== */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+/* ===== Glass Morphism ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--color-primary-glow);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--color-primary-glow);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ===== Responsive Breakpoints Reference ===== */
+/*
+  sm: 640px
+  md: 768px
+  lg: 1024px
+  xl: 1280px
+  2xl: 1536px
+*/
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-bg-primary);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  z-index: var(--z-tooltip);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ===== Selection Styles ===== */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg-primary);
+}
+
+/* ===== Scrollbar Styles ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
