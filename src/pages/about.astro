@@ -3,104 +3,153 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="About Us | Irise Capital"
-  description="Learn about Irise Capital, our founder Raajveer Nath, our mission, and our approach to investment advisory services."
+  title="About Us | iRise Capital"
+  description="Learn about iRise Capital, our founder Raajveer Nath, our mission, and our approach to investment advisory services."
 >
   <!-- Hero -->
-  <section class="about-hero">
-    <div class="about-hero__container container">
-      <h1 class="about-hero__title animate-fade-in">
-        About <span class="text-gradient">Irise Capital</span>
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <div class="page-hero__grid"></div>
+    </div>
+    <div class="container">
+      <span class="page-hero__label">About Us</span>
+      <h1 class="page-hero__title">
+        Empowering Your <span class="text-accent">Financial Journey</span>
       </h1>
-      <p class="about-hero__subtitle animate-fade-in">
-        Empowering informed investment decisions through thoughtful guidance and expertise.
+      <p class="page-hero__desc">
+        iRise Capital is a cutting-edge Investment Advisory Firm dedicated to empowering clients with thoughtful investment advice.
       </p>
     </div>
   </section>
 
   <!-- Mission Section -->
   <section class="mission section">
-    <div class="mission__container container">
-      <div class="mission__content">
-        <h2 class="section-title">Our <span class="text-gradient">Mission</span></h2>
-        <p>
-          At Irise Capital, our mission is to democratize access to professional investment guidance. We believe that everyone deserves the opportunity to make informed financial decisions, regardless of their background or starting capital.
-        </p>
-        <p>
-          We provide consultative guidance rather than direct portfolio management, ensuring compliance with regulatory standards while maximizing your investment potential. Our approach combines traditional financial wisdom with modern market insights.
-        </p>
+    <div class="container">
+      <div class="mission__layout">
+        <div class="mission__content">
+          <span class="section-label">Our Mission</span>
+          <h2 class="section-heading">
+            Why We <span class="text-accent">Exist</span>
+          </h2>
+          <p>
+            At iRise Capital, our mission is to democratize access to professional investment guidance. We believe that everyone deserves the opportunity to make <strong>informed financial decisions</strong>, regardless of their background or starting capital.
+          </p>
+          <p>
+            We provide consultative guidance rather than direct portfolio management, ensuring compliance with regulatory standards while maximizing your investment potential. Our approach combines <strong>traditional financial wisdom</strong> with modern market insights.
+          </p>
+          <p>
+            Whether you're a first-time investor looking to grow your savings or an experienced trader seeking new opportunities, we're here to guide you every step of the way.
+          </p>
+        </div>
+        <div class="mission__visual">
+          <div class="stat-card">
+            <div class="stat-card__value">$350K+</div>
+            <div class="stat-card__label">Under Advisory</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">100+</div>
+            <div class="stat-card__label">Happy Clients</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">₹299</div>
+            <div class="stat-card__label">Consultation Fee</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">4+</div>
+            <div class="stat-card__label">Asset Classes</div>
+          </div>
+        </div>
       </div>
-      <div class="mission__values">
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Values</span>
+        <h2 class="section-heading">
+          What We <span class="text-accent">Stand For</span>
+        </h2>
+      </div>
+      
+      <div class="values__grid">
         <div class="value-card">
           <div class="value-card__icon">🎯</div>
           <h3>Client-Focused</h3>
-          <p>Every strategy is tailored to your unique goals and risk tolerance.</p>
+          <p>Every strategy is tailored to your unique goals, income level, and risk tolerance. We put your needs first.</p>
         </div>
         <div class="value-card">
           <div class="value-card__icon">🔒</div>
           <h3>Transparency</h3>
-          <p>Clear communication and honest advice, always.</p>
+          <p>Clear communication and honest advice, always. No hidden fees, no surprises – just straightforward guidance.</p>
         </div>
         <div class="value-card">
           <div class="value-card__icon">📊</div>
           <h3>Data-Driven</h3>
-          <p>Strategies rigorously backtested with professional expertise.</p>
+          <p>Our strategies are rigorously backtested with professional expertise. We base our advice on solid research.</p>
         </div>
         <div class="value-card">
           <div class="value-card__icon">🤝</div>
           <h3>Partnership</h3>
-          <p>We grow together – your success is our success.</p>
+          <p>We grow together – your success is our success. We're invested in your financial well-being.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">📚</div>
+          <h3>Education</h3>
+          <p>We empower you with knowledge and resources to understand your investments and make informed decisions.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">⚖️</div>
+          <h3>Compliance</h3>
+          <p>We operate with full regulatory compliance, ensuring your investments are handled responsibly and ethically.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Founder Section -->
-  <section class="founder-full section">
-    <div class="founder-full__container container">
-      <div class="founder-full__image">
-        <div class="founder-avatar">
-          <span>RN</span>
-        </div>
-        <div class="founder-stats">
-          <div class="stat">
-            <span class="stat-value">$350K+</span>
-            <span class="stat-label">Under Advisory</span>
+  <section class="founder section">
+    <div class="container">
+      <div class="founder__layout">
+        <div class="founder__image">
+          <div class="founder__avatar">
+            <span>RN</span>
           </div>
-          <div class="stat">
-            <span class="stat-value">100+</span>
-            <span class="stat-label">Clients Served</span>
+          <div class="founder__badge">Founder & CEO</div>
+        </div>
+        <div class="founder__content">
+          <span class="section-label">Meet the Founder</span>
+          <h2 class="section-heading">
+            <span class="text-accent">Raajveer Nath</span>
+          </h2>
+          <p class="founder__location">📍 Hyderabad, India</p>
+          
+          <div class="founder__bio">
+            <p>
+              I'm Raajveer Nath, a passionate and forward-thinking individual deeply immersed in the world of finance and investment. With a keen analytical mindset, I've ventured into entrepreneurial projects, including launching iRise Capital – an investment advisory firm that prioritizes consultative services and innovative stock recommendations.
+            </p>
+            <p>
+              My journey in finance began with a fascination for market dynamics and the desire to help others navigate the complex world of investments. Over the years, I've developed expertise in <strong>cryptocurrency trading, stock market analysis, and mutual fund selection</strong>.
+            </p>
+            <p>
+              At iRise Capital, I've already managed over <strong>$350,000</strong> in investments, helping clients achieve their financial goals through carefully crafted strategies. My approach combines rigorous data analysis with an understanding of each client's unique situation.
+            </p>
+            <p>
+              At the core of my vision is empowering clients with insightful guidance, blending traditional and modern approaches to create a robust investment experience. I believe that with the right guidance, <strong>anyone can build lasting wealth</strong>.
+            </p>
           </div>
-        </div>
-      </div>
-      <div class="founder-full__content">
-        <h2 class="section-title">Meet the <span class="text-gradient">Founder</span></h2>
-        <h3 class="founder-name">Raajveer Nath</h3>
-        <p class="founder-location">📍 Hyderabad, India</p>
-        
-        <div class="founder-bio">
-          <p>
-            I'm Raajveer Nath, a passionate and forward-thinking individual deeply immersed in the world of finance and investment. With a keen analytical mindset, I've ventured into entrepreneurial projects, including launching my own investment advisory firm that prioritizes consultative services and innovative stock recommendations.
-          </p>
-          <p>
-            My journey in finance began with a fascination for market dynamics and the desire to help others navigate the complex world of investments. Over the years, I've developed expertise in cryptocurrency trading, stock market analysis, and mutual fund selection.
-          </p>
-          <p>
-            At Irise Capital, I've already managed over <strong>$350,000</strong> in investments, helping clients achieve their financial goals through carefully crafted strategies. My approach combines rigorous data analysis with an understanding of each client's unique situation.
-          </p>
-          <p>
-            At the core of my Investment Advisory Firm is a vision to empower clients with insightful guidance, blending traditional and modern approaches to create a robust investment experience. I believe that with the right guidance, anyone can build lasting wealth.
-          </p>
-        </div>
 
-        <div class="founder-expertise">
-          <h4>Areas of Expertise:</h4>
-          <div class="expertise-tags">
-            <span class="tag">Cryptocurrency</span>
-            <span class="tag">Stock Analysis</span>
-            <span class="tag">Mutual Funds</span>
-            <span class="tag">Risk Management</span>
-            <span class="tag">Portfolio Strategy</span>
+          <div class="founder__expertise">
+            <h4>Areas of Expertise</h4>
+            <div class="expertise-tags">
+              <span class="tag">Cryptocurrency</span>
+              <span class="tag">Stock Analysis</span>
+              <span class="tag">Mutual Funds</span>
+              <span class="tag">Risk Management</span>
+              <span class="tag">Portfolio Strategy</span>
+              <span class="tag">Market Research</span>
+            </div>
           </div>
         </div>
       </div>
@@ -108,34 +157,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- Why Choose Us -->
-  <section class="why-us section">
-    <div class="why-us__container container">
-      <h2 class="section-title">Why Choose <span class="text-gradient">Irise Capital?</span></h2>
+  <section class="why-us section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why iRise Capital?</span>
+        <h2 class="section-heading">
+          The <span class="text-accent">iRise Advantage</span>
+        </h2>
+        <p class="section-desc">Here's what sets us apart from the rest</p>
+      </div>
       
       <div class="why-us__grid">
-        <div class="feature-card card">
+        <div class="feature-card">
+          <div class="feature-card__number">01</div>
           <h3>Personalized Approach</h3>
           <p>We don't believe in one-size-fits-all solutions. Every investment plan is crafted specifically for your financial situation, goals, and comfort with risk.</p>
         </div>
-        <div class="feature-card card">
-          <h3>Regulatory Compliance</h3>
-          <p>We operate with full transparency and compliance with regulatory standards. Your trust and security are our top priorities.</p>
-        </div>
-        <div class="feature-card card">
-          <h3>Affordable Consultation</h3>
+        <div class="feature-card">
+          <div class="feature-card__number">02</div>
+          <h3>Affordable Access</h3>
           <p>Quality investment advice shouldn't break the bank. Our consultation fee of just ₹299 makes professional guidance accessible to everyone.</p>
         </div>
-        <div class="feature-card card">
+        <div class="feature-card">
+          <div class="feature-card__number">03</div>
           <h3>Ongoing Support</h3>
-          <p>Our relationship doesn't end after the initial consultation. We provide continuous support and regular portfolio reviews.</p>
+          <p>Our relationship doesn't end after the initial consultation. We provide continuous support and regular portfolio reviews to keep you on track.</p>
         </div>
-        <div class="feature-card card">
+        <div class="feature-card">
+          <div class="feature-card__number">04</div>
           <h3>Educational Resources</h3>
-          <p>We empower you with knowledge through guides, tutorials, and resources to help you understand your investments.</p>
+          <p>We empower you with knowledge through guides, tutorials, and market insights to help you understand your investments better.</p>
         </div>
-        <div class="feature-card card">
+        <div class="feature-card">
+          <div class="feature-card__number">05</div>
           <h3>Diverse Options</h3>
-          <p>From cryptocurrencies to mutual funds, we help you explore and understand a wide range of investment opportunities.</p>
+          <p>From cryptocurrencies to mutual funds, we help you explore and understand a wide range of investment opportunities suited to your profile.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__number">06</div>
+          <h3>Proven Results</h3>
+          <p>With $350K+ under advisory and 100+ satisfied clients, our track record speaks for itself. Join the iRise family today.</p>
         </div>
       </div>
     </div>
@@ -143,13 +204,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- CTA Section -->
   <section class="cta section">
-    <div class="cta__container container">
-      <div class="cta__content card">
+    <div class="container">
+      <div class="cta__card">
         <h2>Ready to Start Your Investment Journey?</h2>
         <p>Book a consultation today and take the first step towards financial empowerment.</p>
         <div class="cta__actions">
-          <a href="/#contact" class="btn btn-primary btn-lg">Get Started – ₹299</a>
-          <a href="mailto:irisecapital@gmail.com" class="btn btn-secondary btn-lg">Email Us</a>
+          <a href="/#contact" class="btn btn--primary btn--lg">
+            <span>Get Started – ₹299</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="mailto:irisecapital@gmail.com" class="btn btn--outline-light">
+            <span>Email Us</span>
+          </a>
         </div>
       </div>
     </div>
@@ -158,271 +226,399 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  /* About Hero */
-  .about-hero {
-    padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
-    background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
-    text-align: center;
-  }
+/* Page Hero */
+.page-hero {
+  position: relative;
+  padding: calc(var(--header-height) + 4rem) 0 4rem;
+  text-align: center;
+  overflow: hidden;
+}
 
-  .about-hero__title {
-    font-size: var(--text-4xl);
-    margin-bottom: var(--space-4);
-  }
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  z-index: -1;
+}
 
-  @media (min-width: 768px) {
-    .about-hero__title {
-      font-size: var(--text-5xl);
-    }
-  }
+.page-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(45, 140, 240, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 140, 240, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
 
-  .about-hero__subtitle {
-    font-size: var(--text-xl);
-    color: var(--color-text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-  }
+.page-hero__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2d8cf0;
+  margin-bottom: 1rem;
+}
 
-  /* Mission */
-  .mission__container {
-    display: grid;
-    gap: var(--space-12);
-  }
+.page-hero__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
 
-  @media (min-width: 1024px) {
-    .mission__container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+.text-accent {
+  color: #2d8cf0;
+}
 
-  .mission__content p {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-4);
-    line-height: 1.8;
-  }
+.page-hero__desc {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-  .mission__values {
-    display: grid;
+/* Section Common */
+.section {
+  padding: 5rem 0;
+}
+
+.section--alt {
+  background: var(--color-bg-secondary);
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2d8cf0;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.section-desc {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+}
+
+/* Mission */
+.mission__layout {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .mission__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mission__content p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.mission__visual {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: #2d8cf0;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.stat-card__value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d8cf0;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card__label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Values */
+.values__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .values__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
   }
+}
 
-  .value-card {
-    padding: var(--space-6);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    transition: all var(--transition-base);
+@media (min-width: 1024px) {
+  .values__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .value-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-brand-accent);
+.value-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  border-color: #2d8cf0;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.value-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Founder */
+.founder__layout {
+  display: grid;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .founder__layout {
+    grid-template-columns: 280px 1fr;
   }
+}
 
-  .value-card__icon {
-    font-size: 40px;
-    margin-bottom: var(--space-3);
-  }
+.founder__image {
+  text-align: center;
+}
 
-  .value-card h3 {
-    font-size: var(--text-base);
-    margin-bottom: var(--space-2);
-  }
+.founder__avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0D2741 0%, #2d8cf0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 20px 60px rgba(13, 39, 65, 0.3);
+}
 
-  .value-card p {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    margin: 0;
-  }
+.founder__avatar span {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+}
 
-  /* Founder Full */
-  .founder-full {
-    background: var(--color-bg-secondary);
-  }
+.founder__badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: #2d8cf0;
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
 
-  .founder-full__container {
-    display: grid;
-    gap: var(--space-12);
-    align-items: start;
-  }
+.founder__location {
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
 
-  @media (min-width: 1024px) {
-    .founder-full__container {
-      grid-template-columns: 300px 1fr;
-    }
-  }
+.founder__bio p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
 
-  .founder-full__image {
-    text-align: center;
-  }
+.founder__expertise {
+  margin-top: 2rem;
+}
 
-  .founder-avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto var(--space-6);
-  }
+.founder__expertise h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
 
-  .founder-avatar span {
-    font-size: var(--text-4xl);
-    font-weight: var(--font-bold);
-    color: #fff;
-  }
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
-  .founder-stats {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-6);
-  }
+.tag {
+  padding: 0.5rem 1rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
 
-  .stat {
-    text-align: center;
-  }
+/* Why Us */
+.why-us__grid {
+  display: grid;
+  gap: 1.5rem;
+}
 
-  .stat-value {
-    display: block;
-    font-size: var(--text-2xl);
-    font-weight: var(--font-bold);
-    color: var(--color-brand-primary);
-  }
-
-  [data-theme="dark"] .stat-value {
-    color: var(--color-brand-accent);
-  }
-
-  .stat-label {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-  }
-
-  .founder-name {
-    font-size: var(--text-2xl);
-    margin-bottom: var(--space-2);
-  }
-
-  .founder-location {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-6);
-  }
-
-  .founder-bio p {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-4);
-    line-height: 1.8;
-  }
-
-  .founder-expertise {
-    margin-top: var(--space-8);
-  }
-
-  .founder-expertise h4 {
-    margin-bottom: var(--space-4);
-  }
-
-  .expertise-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .tag {
-    padding: var(--space-2) var(--space-4);
-    background: var(--color-bg-tertiary);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: var(--font-medium);
-  }
-
-  /* Why Us */
+@media (min-width: 768px) {
   .why-us__grid {
-    display: grid;
-    gap: var(--space-6);
-    margin-top: var(--space-8);
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  @media (min-width: 768px) {
-    .why-us__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+@media (min-width: 1024px) {
+  .why-us__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  @media (min-width: 1024px) {
-    .why-us__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+.feature-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
 
-  .feature-card {
-    padding: var(--space-6);
-  }
+.feature-card:hover {
+  border-color: #2d8cf0;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 
-  .feature-card h3 {
-    margin-bottom: var(--space-3);
-    color: var(--color-brand-primary);
-  }
+.feature-card__number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2d8cf0;
+  opacity: 0.2;
+  margin-bottom: 1rem;
+}
 
-  [data-theme="dark"] .feature-card h3 {
-    color: var(--color-brand-accent);
-  }
+.feature-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
 
-  .feature-card p {
-    color: var(--color-text-secondary);
-    font-size: var(--text-sm);
-    margin: 0;
-  }
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
 
-  /* CTA */
-  .cta__content {
-    text-align: center;
-    padding: var(--space-12);
-    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
-    color: #fff;
-    border: none;
-  }
+/* CTA */
+.cta__card {
+  background: linear-gradient(135deg, #0D2741 0%, #1a3a5c 100%);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  color: #fff;
+}
 
-  .cta__content h2 {
-    color: #fff;
-    margin-bottom: var(--space-4);
-  }
+.cta__card h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+  color: #fff;
+}
 
-  .cta__content p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-8);
-  }
+.cta__card p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
 
-  .cta__actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-4);
-  }
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
 
-  .cta__content .btn-primary {
-    background: #fff;
-    color: var(--color-brand-primary);
-    border-color: #fff;
-  }
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
 
-  .cta__content .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.9);
-  }
+.btn--primary {
+  background: #fff;
+  color: #0D2741;
+  border-color: #fff;
+}
 
-  .cta__content .btn-secondary {
-    border-color: #fff;
-    color: #fff;
-  }
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+}
 
-  .cta__content .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
+.btn--lg {
+  padding: 1rem 2rem;
+}
+
+.btn--outline-light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn--outline-light:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
 </style>

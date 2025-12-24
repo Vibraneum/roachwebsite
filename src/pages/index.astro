@@ -3,81 +3,131 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="Irise Capital | Empowering Informed Investment Decisions"
-  description="Irise Capital is a cutting-edge Investment Advisory Firm dedicated to empowering clients with thoughtful investment advice in cryptocurrency, stocks, and mutual funds."
+  title="iRise Capital | Empowering Informed Investment Decisions"
+  description="iRise Capital is a cutting-edge Investment Advisory Firm dedicated to empowering clients with thoughtful investment advice in cryptocurrency, stocks, and mutual funds."
 >
   <!-- Hero Section -->
-  <section class="hero" id="home">
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__grid"></div>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+    </div>
     <div class="hero__container container">
-      <div class="hero__content">
-        <h1 class="hero__title animate-fade-in">
-          Empowering Informed
-          <span class="text-gradient">Investment Decisions</span>
-        </h1>
-        <p class="hero__description animate-fade-in">
-          We provide consultative guidance rather than direct portfolio management, ensuring compliance with regulatory standards while maximizing your potential.
-        </p>
-        <div class="hero__cta animate-fade-in">
-          <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
-          <a href="/about" class="btn btn-secondary btn-lg">Learn More</a>
-        </div>
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        Investment Advisory Firm
       </div>
-      <div class="hero__visual animate-fade-in">
-        <div class="hero__chart">
-          <div class="chart-bar" style="--height: 60%"></div>
-          <div class="chart-bar" style="--height: 80%"></div>
-          <div class="chart-bar" style="--height: 45%"></div>
-          <div class="chart-bar" style="--height: 90%"></div>
-          <div class="chart-bar" style="--height: 70%"></div>
+      <h1 class="hero__title">
+        Empowering Informed<br>
+        <span class="hero__title-highlight">Investment Decisions</span>
+      </h1>
+      <p class="hero__subtitle">
+        We provide consultative guidance rather than direct portfolio management, ensuring compliance with regulatory standards while maximizing your potential.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary btn--glow">
+          <span>Start Investing</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="/about" class="btn btn--outline">
+          <span>Learn More</span>
+        </a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat-item">
+          <span class="stat-value">$350K+</span>
+          <span class="stat-label">Under Advisory</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">100+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">₹299</span>
+          <span class="stat-label">Consultation Fee</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Marquee Section -->
-  <div class="marquee-container">
-    <div class="marquee">
-      <div class="marquee-content">
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <div class="marquee__content">
         <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
+        <span class="marquee__star">✦</span>
+        <span>Invest With Confidence</span>
+        <span class="marquee__star">✦</span>
+        <span>Build Your Future</span>
+        <span class="marquee__star">✦</span>
         <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
-        <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
-        <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
+        <span class="marquee__star">✦</span>
+        <span>Invest With Confidence</span>
+        <span class="marquee__star">✦</span>
+        <span>Build Your Future</span>
+        <span class="marquee__star">✦</span>
       </div>
-      <div class="marquee-content" aria-hidden="true">
+      <div class="marquee__content" aria-hidden="true">
         <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
+        <span class="marquee__star">✦</span>
+        <span>Invest With Confidence</span>
+        <span class="marquee__star">✦</span>
+        <span>Build Your Future</span>
+        <span class="marquee__star">✦</span>
         <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
-        <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
-        <span>Never Settle For Less</span>
-        <span class="separator">✦</span>
+        <span class="marquee__star">✦</span>
+        <span>Invest With Confidence</span>
+        <span class="marquee__star">✦</span>
+        <span>Build Your Future</span>
+        <span class="marquee__star">✦</span>
       </div>
     </div>
   </div>
 
-  <!-- What We Offer Section -->
-  <section class="offer section" id="offer">
-    <div class="offer__container container">
-      <div class="offer__content">
-        <h2 class="section-title">What do we <span class="text-gradient">offer?</span></h2>
-        <div class="offer__text">
-          <p>
-            Irise Capital is a cutting-edge Investment Advisory Firm dedicated to empowering clients with thoughtful investment advice. We specialize in providing consultative guidance rather than direct portfolio management, ensuring compliance with regulatory standards.
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__layout">
+        <div class="about__content">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-heading">
+            What do we <span class="text-accent">offer?</span>
+          </h2>
+          <p class="about__text">
+            iRise Capital is a cutting-edge Investment Advisory Firm dedicated to empowering clients with thoughtful investment advice. We specialize in providing <strong>consultative guidance</strong> rather than direct portfolio management, ensuring compliance with regulatory standards.
           </p>
-          <p>
-            We offer tailored investment advice in areas such as cryptocurrency, stocks, and mutual funds, carefully considering each client's income and risk appetite. Our investment strategies are rigorously backtested and crafted with professional expertise.
+          <p class="about__text">
+            We offer tailored investment advice in areas such as <strong>cryptocurrency, stocks, and mutual funds</strong>, carefully considering each client's income and risk appetite. Our investment strategies are rigorously backtested and crafted with professional expertise.
           </p>
+          <div class="about__features">
+            <div class="feature-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Personalized Strategies
+            </div>
+            <div class="feature-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Risk Assessment
+            </div>
+            <div class="feature-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Regulatory Compliance
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="offer__image">
-        <div class="offer__visual">
-          <div class="visual-circle"></div>
-          <div class="visual-icon">📈</div>
+        <div class="about__visual">
+          <div class="visual-card">
+            <div class="visual-card__icon">📈</div>
+            <div class="visual-card__lines">
+              <div class="line line--1"></div>
+              <div class="line line--2"></div>
+              <div class="line line--3"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -85,209 +135,267 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- Services Section -->
   <section class="services section" id="services">
-    <div class="services__container container">
-      <h2 class="section-title">Our <span class="text-gradient">Services</span></h2>
-      
-      <div class="services__grid">
-        <div class="service-card card">
-          <div class="service-card__icon">01</div>
-          <h3>Define Your Goals</h3>
-          <p>We start by understanding your financial objectives, timeline, and risk tolerance to create a personalized roadmap.</p>
-        </div>
-        <div class="service-card card">
-          <div class="service-card__icon">02</div>
-          <h3>Consult Our Experts</h3>
-          <p>Our experienced advisors provide insights and recommendations tailored to your unique financial situation.</p>
-        </div>
-        <div class="service-card card">
-          <div class="service-card__icon">03</div>
-          <h3>Craft Your Plan</h3>
-          <p>We develop comprehensive investment strategies that align with your goals and evolve with market conditions.</p>
-        </div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Process</span>
+        <h2 class="section-heading">
+          How We <span class="text-accent">Help You</span>
+        </h2>
+        <p class="section-desc">Start your investment journey with confidence in just three simple steps</p>
       </div>
-
-      <div class="services__detail card">
-        <h3>Personalized Investment Planning</h3>
-        <p>
-          At Irise Capital, we understand that each investor is unique. Our personalized investment plans are meticulously crafted to match your financial goals, risk tolerance, and investment timeline. By deeply understanding your needs, we design strategies that aim for optimal returns while respecting your comfort with risk.
-        </p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-step__number">01</div>
+          <div class="process-step__content">
+            <h3>Define Your Goals</h3>
+            <p>Share your financial objectives, timeline, and how much risk you're comfortable with. We listen carefully to understand your unique situation.</p>
+          </div>
+          <div class="process-step__icon">🎯</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">02</div>
+          <div class="process-step__content">
+            <h3>Consult Our Experts</h3>
+            <p>Get personalized advice from our experienced team. We analyze market conditions and match them with your goals for optimal recommendations.</p>
+          </div>
+          <div class="process-step__icon">💡</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">03</div>
+          <div class="process-step__content">
+            <h3>Execute Your Plan</h3>
+            <p>Receive a comprehensive investment strategy tailored just for you. We guide you through implementation and provide ongoing support.</p>
+          </div>
+          <div class="process-step__icon">🚀</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Investment Options Section -->
+  <!-- Investment Options -->
   <section class="investments section" id="investments">
-    <div class="investments__container container">
-      <div class="investments__content">
-        <h2 class="section-title">Diverse Investment <span class="text-gradient">Options</span></h2>
-        <p class="section-subtitle">
-          Explore a broad spectrum of investment opportunities, from stocks and mutual funds to cryptocurrencies. Each asset class comes with its own risk and reward profile.
-        </p>
-        
-        <div class="investment-types">
-          <div class="type-card">
-            <div class="type-card__icon crypto-icon">₿</div>
-            <h4>Cryptocurrencies</h4>
-            <p>High volatility, high-risk, high-reward investments. Can yield substantial returns but carry significant risk.</p>
-            <span class="risk-badge high">High Risk</span>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Investment Options</span>
+        <h2 class="section-heading">
+          Diverse <span class="text-accent">Opportunities</span>
+        </h2>
+        <p class="section-desc">Explore a broad spectrum of investment opportunities tailored to your risk appetite</p>
+      </div>
+
+      <div class="investment-grid">
+        <div class="investment-card investment-card--crypto">
+          <div class="investment-card__header">
+            <div class="investment-card__icon">₿</div>
+            <span class="risk-tag risk-tag--high">High Risk</span>
           </div>
-          <div class="type-card">
-            <div class="type-card__icon stocks-icon">📊</div>
-            <h4>Stocks</h4>
-            <p>Medium to high risk. Offer potential for substantial growth over the long term with market fluctuations.</p>
-            <span class="risk-badge medium">Medium Risk</span>
+          <h3>Cryptocurrency</h3>
+          <p>High volatility with potential for substantial returns. Suitable for risk-tolerant investors seeking growth opportunities in digital assets.</p>
+          <div class="investment-card__bar">
+            <div class="bar-fill" style="--width: 90%;"></div>
           </div>
-          <div class="type-card">
-            <div class="type-card__icon funds-icon">📁</div>
-            <h4>Mutual Funds</h4>
-            <p>Low to medium risk. Diversification across various assets, mitigating risk while offering steady returns.</p>
-            <span class="risk-badge low">Low Risk</span>
+          <span class="investment-card__label">Risk Level: 9/10</span>
+        </div>
+
+        <div class="investment-card investment-card--stocks">
+          <div class="investment-card__header">
+            <div class="investment-card__icon">📊</div>
+            <span class="risk-tag risk-tag--medium">Medium Risk</span>
           </div>
-          <div class="type-card">
-            <div class="type-card__icon commodity-icon">🥇</div>
-            <h4>Commodities</h4>
-            <p>Gold and other commodities provide a hedge against inflation and market volatility.</p>
-            <span class="risk-badge low">Low Risk</span>
+          <h3>Stocks</h3>
+          <p>Build wealth over time with equity investments. Potential for substantial growth with market fluctuations balanced by diversification.</p>
+          <div class="investment-card__bar">
+            <div class="bar-fill" style="--width: 65%;"></div>
           </div>
+          <span class="investment-card__label">Risk Level: 6.5/10</span>
+        </div>
+
+        <div class="investment-card investment-card--mutual">
+          <div class="investment-card__header">
+            <div class="investment-card__icon">📁</div>
+            <span class="risk-tag risk-tag--low">Low-Med Risk</span>
+          </div>
+          <h3>Mutual Funds</h3>
+          <p>Professionally managed, diversified portfolios that spread risk across multiple assets. Ideal for steady, long-term growth.</p>
+          <div class="investment-card__bar">
+            <div class="bar-fill" style="--width: 40%;"></div>
+          </div>
+          <span class="investment-card__label">Risk Level: 4/10</span>
+        </div>
+
+        <div class="investment-card investment-card--commodity">
+          <div class="investment-card__header">
+            <div class="investment-card__icon">🥇</div>
+            <span class="risk-tag risk-tag--low">Low Risk</span>
+          </div>
+          <h3>Commodities</h3>
+          <p>Gold and other commodities provide a hedge against inflation. A safe haven during market uncertainty and economic volatility.</p>
+          <div class="investment-card__bar">
+            <div class="bar-fill" style="--width: 25%;"></div>
+          </div>
+          <span class="investment-card__label">Risk Level: 2.5/10</span>
         </div>
       </div>
 
-      <div class="investments__chart">
-        <h3>Investment Pyramid</h3>
-        <div class="pyramid">
-          <div class="pyramid-level" style="--width: 40%; --bg: #ef4444;">Stocks</div>
-          <div class="pyramid-level" style="--width: 55%; --bg: #22c55e;">Crypto</div>
-          <div class="pyramid-level" style="--width: 70%; --bg: #f59e0b;">Mutual Funds</div>
-          <div class="pyramid-level" style="--width: 85%; --bg: #3b82f6;">Commodities</div>
-        </div>
-        <p class="chart-note">Risk vs. Stability Profile</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats section" id="stats">
-    <div class="stats__container container">
-      <h2 class="section-title">Range of <span class="text-gradient">Investments</span></h2>
-      
-      <div class="stats__visual">
-        <div class="donut-chart">
-          <div class="donut-segment stocks"></div>
-          <div class="donut-hole"></div>
-        </div>
-        <div class="stats__legend">
-          <div class="legend-item">
-            <span class="legend-dot" style="--color: #ef4444;"></span>
-            <span>Stocks (70%)</span>
+      <!-- Risk Pyramid -->
+      <div class="pyramid-section">
+        <div class="pyramid-visual">
+          <div class="pyramid">
+            <div class="pyramid-level pyramid-level--4">
+              <span>Stocks</span>
+            </div>
+            <div class="pyramid-level pyramid-level--3">
+              <span>Cryptocurrency</span>
+            </div>
+            <div class="pyramid-level pyramid-level--2">
+              <span>Mutual Funds</span>
+            </div>
+            <div class="pyramid-level pyramid-level--1">
+              <span>Commodities</span>
+            </div>
           </div>
-          <div class="legend-item">
-            <span class="legend-dot" style="--color: #f59e0b;"></span>
-            <span>Mutual Funds (20%)</span>
-          </div>
-          <div class="legend-item">
-            <span class="legend-dot" style="--color: #3b82f6;"></span>
-            <span>Crypto (10%)</span>
+          <div class="pyramid-labels">
+            <span class="label-high">Higher Risk / Higher Return</span>
+            <span class="label-low">Lower Risk / Stable Returns</span>
           </div>
         </div>
       </div>
-      <p class="stats__disclaimer">*The above chart shows the different categories Irise Capital has advised its customers in*</p>
     </div>
   </section>
 
   <!-- Benefits Section -->
   <section class="benefits section" id="benefits">
-    <div class="benefits__container container">
-      <h2 class="section-title">It doesn't end there!</h2>
-      
-      <div class="benefits__grid">
-        <div class="benefit-bubble blue">
-          <span class="benefit-icon">🔧</span>
-          <h3>Account Setup Assistance</h3>
-        </div>
-        <div class="benefit-bubble green">
-          <span class="benefit-icon">💬</span>
-          <h3>Ongoing Support</h3>
-        </div>
-        <div class="benefit-bubble orange">
-          <span class="benefit-icon">📚</span>
-          <h3>Educational Resources</h3>
-        </div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What You Get</span>
+        <h2 class="section-heading">
+          It doesn't <span class="text-accent">end there!</span>
+        </h2>
       </div>
 
-      <div class="benefits__text card">
-        <h3>Other Awesome Benefits!</h3>
-        <p>
-          At Irise Capital, we ensure a seamless investment experience by assisting you with account setup from the start. Our commitment doesn't stop there; we provide ongoing support, regularly reviewing and adjusting your investment plan to keep it aligned with your goals.
-        </p>
-        <p>
-          In addition, we offer a wealth of educational resources, including guides and tutorials, empowering you with the knowledge to make informed decisions.
-        </p>
+      <div class="benefits-grid">
+        <div class="benefit-card benefit-card--setup">
+          <div class="benefit-card__icon">🔧</div>
+          <h3>Account Setup Assistance</h3>
+          <p>We help you set up your investment accounts, guiding you through every step of the process for a seamless start.</p>
+        </div>
+        <div class="benefit-card benefit-card--support">
+          <div class="benefit-card__icon">💬</div>
+          <h3>Ongoing Support</h3>
+          <p>Regular portfolio reviews and strategy adjustments to keep your investments aligned with your evolving goals.</p>
+        </div>
+        <div class="benefit-card benefit-card--education">
+          <div class="benefit-card__icon">📚</div>
+          <h3>Educational Resources</h3>
+          <p>Access guides, tutorials, and market insights to empower you with knowledge for informed decision-making.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Quick About Section (links to full About page) -->
+  <!-- Founder Section -->
   <section class="founder section" id="founder">
-    <div class="founder__container container">
-      <div class="founder__image">
-        <div class="founder__avatar">
-          <span>RN</span>
+    <div class="container">
+      <div class="founder__layout">
+        <div class="founder__image">
+          <div class="founder__avatar">
+            <span>RN</span>
+          </div>
+          <div class="founder__badge">Founder & CEO</div>
         </div>
-      </div>
-      <div class="founder__content">
-        <h2 class="section-title">About the <span class="text-gradient">Founder</span></h2>
-        <p>
-          <strong>Raajveer Nath</strong> is a passionate and forward-thinking individual from Hyderabad, India, deeply immersed in the world of finance and investment. With notable successes in the cryptocurrency space and managing <strong>$350k</strong> under Irise Capital, he brings dedication and expertise to market dynamics.
-        </p>
-        <a href="/about" class="btn btn-secondary">Read Full Story →</a>
+        <div class="founder__content">
+          <span class="section-label">About the Founder</span>
+          <h2 class="section-heading">
+            Meet <span class="text-accent">Raajveer Nath</span>
+          </h2>
+          <p>
+            I'm a passionate and forward-thinking individual from <strong>Hyderabad, India</strong>, deeply immersed in the world of finance and investment. With a keen analytical mindset, I've ventured into entrepreneurial projects, including launching iRise Capital.
+          </p>
+          <p>
+            My journey includes notable successes in the cryptocurrency space, already managing <strong>$350,000+</strong> in investments. At the core of my vision is empowering clients with insightful guidance, blending traditional and modern approaches.
+          </p>
+          <a href="/about" class="btn btn--secondary">
+            <span>Read Full Story</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact section" id="contact">
-    <div class="contact__container container">
-      <div class="contact__info">
-        <h2 class="section-title">Contact <span class="text-gradient">Us</span></h2>
-        <p>
-          Are you interested in personalized financial guidance? We're here to help you navigate the world of investments with confidence and clarity.
-        </p>
-        <p>
-          Our comprehensive consultation is available for a nominal fee of just <strong>₹299</strong>. Reach out today!
-        </p>
-        <a href="mailto:irisecapital@gmail.com" class="contact__email">
-          <span class="email-icon">✉</span>
-          irisecapital@gmail.com
-        </a>
-      </div>
-      
-      <div class="contact__form-wrapper card">
-        <form class="contact__form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" required placeholder="John" />
+    <div class="container">
+      <div class="contact__layout">
+        <div class="contact__info">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-heading">
+            Ready to <span class="text-accent">Start?</span>
+          </h2>
+          <p class="contact__text">
+            Take the first step towards financial empowerment. Our comprehensive consultation is available for just <strong>₹299</strong>.
+          </p>
+          
+          <div class="contact__details">
+            <a href="mailto:irisecapital@gmail.com" class="contact__item">
+              <div class="contact__item-icon">✉️</div>
+              <div class="contact__item-text">
+                <span class="contact__item-label">Email Us</span>
+                <span class="contact__item-value">irisecapital@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact__item">
+              <div class="contact__item-icon">📍</div>
+              <div class="contact__item-text">
+                <span class="contact__item-label">Location</span>
+                <span class="contact__item-value">Hyderabad, India</span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" required placeholder="Doe" />
+            <div class="contact__item">
+              <div class="contact__item-icon">💰</div>
+              <div class="contact__item-text">
+                <span class="contact__item-label">Consultation Fee</span>
+                <span class="contact__item-value">₹299 only</span>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="john@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone (Optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Tell us about your investment goals..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-          <p class="form-note">By submitting, you agree to be contacted regarding investment advisory services.</p>
-        </form>
+        </div>
+
+        <div class="contact__form-wrapper">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+              </div>
+              <div class="form-field">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 9876543210">
+            </div>
+            <div class="form-field">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your investment goals..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <span>Send Message</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -295,590 +403,912 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  /* Hero */
-  .hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    padding-top: var(--header-height);
-    background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
-  }
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+  --color-primary: #0D2741;
+  --color-primary-light: #1a3a5c;
+  --color-primary-dark: #091c30;
+  --color-accent: #2d8cf0;
+  --color-accent-light: #5ba8f5;
+  --color-gold: #d4a83e;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
 
-  .hero__container {
-    display: grid;
-    gap: var(--space-12);
-    align-items: center;
-  }
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-height) + 3rem) 0 4rem;
+  overflow: hidden;
+}
 
-  @media (min-width: 1024px) {
-    .hero__container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  z-index: -1;
+}
 
-  .hero__title {
-    font-size: var(--text-4xl);
-    line-height: 1.1;
-    margin-bottom: var(--space-6);
-  }
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(45, 140, 240, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 140, 240, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
 
-  @media (min-width: 768px) {
-    .hero__title {
-      font-size: var(--text-5xl);
-    }
-  }
+.hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+}
 
-  .hero__title span {
-    display: block;
-  }
+.hero__glow--1 {
+  width: 600px;
+  height: 600px;
+  background: var(--color-accent);
+  top: -200px;
+  right: -200px;
+  opacity: 0.15;
+}
 
-  .hero__description {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-8);
-    max-width: 500px;
-  }
+.hero__glow--2 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-gold);
+  bottom: -100px;
+  left: -100px;
+  opacity: 0.1;
+}
 
-  .hero__cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-  }
+.hero__container {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-  .hero__chart {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: var(--space-4);
-    height: 300px;
-    padding: var(--space-8);
-    background: var(--color-bg-card);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-border);
-  }
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(45, 140, 240, 0.1);
+  border: 1px solid rgba(45, 140, 240, 0.2);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
 
-  .chart-bar {
-    width: 40px;
-    height: var(--height);
-    background: linear-gradient(to top, var(--color-brand-primary), var(--color-brand-accent));
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-    animation: growBar 1s ease-out forwards;
-  }
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
 
-  @keyframes growBar {
-    from { height: 0; }
-    to { height: var(--height); }
-  }
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
 
-  /* Marquee */
-  .marquee-container {
-    background: var(--color-brand-primary);
-    padding: var(--space-4) 0;
-    overflow: hidden;
-  }
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
 
-  .marquee {
-    display: flex;
-    width: fit-content;
-    animation: marquee 30s linear infinite;
-  }
+.hero__title-highlight {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .marquee-content {
-    display: flex;
-    gap: var(--space-8);
-    white-space: nowrap;
-    padding-right: var(--space-8);
-  }
+.hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
 
-  .marquee-content span {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
-    color: #fff;
-  }
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
 
-  .separator {
-    color: var(--color-brand-gold);
-  }
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+.stat-item {
+  text-align: center;
+}
 
-  /* Offer */
-  .offer__container {
-    display: grid;
-    gap: var(--space-12);
-    align-items: center;
-  }
+.stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
 
-  @media (min-width: 1024px) {
-    .offer__container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
 
-  .offer__text {
-    color: var(--color-text-secondary);
-  }
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--color-border);
+}
 
-  .offer__text p {
-    margin-bottom: var(--space-4);
-    font-size: var(--text-lg);
-    line-height: 1.8;
-  }
+@media (max-width: 640px) {
+  .stat-divider { display: none; }
+  .hero__stats { flex-direction: column; gap: 1.5rem; }
+}
 
-  .offer__visual {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-  }
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
 
-  .visual-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%);
-    opacity: 0.1;
-  }
+.btn--primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+  border-color: var(--color-primary);
+}
 
-  .visual-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-  }
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(13, 39, 65, 0.3);
+}
 
-  /* Services */
-  .services__grid {
-    display: grid;
-    gap: var(--space-6);
-    margin-bottom: var(--space-8);
-  }
+.btn--glow {
+  box-shadow: 0 0 20px rgba(45, 140, 240, 0.3);
+}
 
-  @media (min-width: 768px) {
-    .services__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
 
-  .service-card {
+.btn--outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn--secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* ============================================
+   MARQUEE
+   ============================================ */
+.marquee {
+  background: var(--color-primary);
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+.marquee__track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 40s linear infinite;
+}
+
+.marquee__content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.marquee__content span {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.marquee__star {
+  color: var(--color-gold);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   SECTION COMMON
+   ============================================ */
+.section {
+  padding: 6rem 0;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.section-desc {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about {
+  background: var(--color-bg-secondary);
+}
+
+.about__layout {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about__text {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(45, 140, 240, 0.1);
+  border: 1px solid rgba(45, 140, 240, 0.2);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.visual-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.visual-card__icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.visual-card__lines {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 100px;
+}
+
+.line {
+  width: 40px;
+  border-radius: 8px 8px 0 0;
+  animation: grow 2s ease-in-out infinite;
+}
+
+.line--1 { height: 60%; background: var(--color-accent); animation-delay: 0s; }
+.line--2 { height: 90%; background: var(--color-success); animation-delay: 0.2s; }
+.line--3 { height: 75%; background: var(--color-gold); animation-delay: 0.4s; }
+
+@keyframes grow {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.7); }
+}
+
+/* ============================================
+   SERVICES / PROCESS
+   ============================================ */
+.process-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  border-color: var(--color-accent);
+  transform: translateX(8px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.process-step__number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  opacity: 0.3;
+}
+
+.process-step__content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-step__content p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.process-step__icon {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .process-step {
+    grid-template-columns: 1fr;
     text-align: center;
-    padding: var(--space-8);
+    gap: 1rem;
   }
+  .process-step__number { order: 1; }
+  .process-step__icon { order: 2; }
+  .process-step__content { order: 3; }
+}
 
-  .service-card__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: var(--radius-full);
-    background: var(--color-brand-primary);
-    color: #fff;
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
-    margin-bottom: var(--space-4);
+/* ============================================
+   INVESTMENTS
+   ============================================ */
+.investments {
+  background: var(--color-bg-secondary);
+}
+
+.investment-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .investment-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .service-card h3 {
-    margin-bottom: var(--space-3);
+@media (min-width: 1200px) {
+  .investment-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
 
-  .service-card p {
-    color: var(--color-text-secondary);
-    font-size: var(--text-sm);
+.investment-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.investment-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.investment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.investment-card:hover::before {
+  transform: scaleX(1);
+}
+
+.investment-card--crypto { --card-accent: #f59e0b; }
+.investment-card--stocks { --card-accent: #3b82f6; }
+.investment-card--mutual { --card-accent: #22c55e; }
+.investment-card--commodity { --card-accent: #d4a83e; }
+
+.investment-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.investment-card__icon {
+  font-size: 2rem;
+}
+
+.risk-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.risk-tag--high { background: rgba(239,68,68,0.1); color: #ef4444; }
+.risk-tag--medium { background: rgba(245,158,11,0.1); color: #f59e0b; }
+.risk-tag--low { background: rgba(34,197,94,0.1); color: #22c55e; }
+
+.investment-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.investment-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.investment-card__bar {
+  height: 6px;
+  background: var(--color-bg-tertiary);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.bar-fill {
+  height: 100%;
+  width: var(--width);
+  background: var(--card-accent);
+  border-radius: 100px;
+  transition: width 1s ease;
+}
+
+.investment-card__label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Pyramid */
+.pyramid-section {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pyramid-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pyramid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pyramid-level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+}
+
+.pyramid-level--4 { width: 50%; background: #ef4444; }
+.pyramid-level--3 { width: 65%; background: #f59e0b; }
+.pyramid-level--2 { width: 80%; background: #22c55e; }
+.pyramid-level--1 { width: 95%; background: #3b82f6; }
+
+.pyramid-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   BENEFITS
+   ============================================ */
+.benefits-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .services__detail {
-    padding: var(--space-8);
+.benefit-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 50%, var(--benefit-color) 200%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--benefit-color);
+}
+
+.benefit-card:hover::after {
+  opacity: 0.05;
+}
+
+.benefit-card--setup { --benefit-color: #3b82f6; }
+.benefit-card--support { --benefit-color: #22c55e; }
+.benefit-card--education { --benefit-color: #f59e0b; }
+
+.benefit-card__icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   FOUNDER
+   ============================================ */
+.founder {
+  background: var(--color-bg-secondary);
+}
+
+.founder__layout {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .founder__layout {
+    grid-template-columns: auto 1fr;
   }
+}
 
-  .services__detail h3 {
-    margin-bottom: var(--space-4);
-    color: var(--color-brand-primary);
+.founder__image {
+  text-align: center;
+}
+
+.founder__avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 20px 60px rgba(13, 39, 65, 0.3);
+}
+
+.founder__avatar span {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.founder__badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.founder__content p {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact__layout {
+  display: grid;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .contact__layout {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  [data-theme="dark"] .services__detail h3 {
-    color: var(--color-brand-accent);
-  }
+.contact__text {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
 
-  /* Investments */
-  .investments__container {
-    display: grid;
-    gap: var(--space-12);
-  }
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  @media (min-width: 1024px) {
-    .investments__container {
-      grid-template-columns: 2fr 1fr;
-    }
-  }
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
 
-  .investment-types {
-    display: grid;
-    gap: var(--space-4);
-    margin-top: var(--space-8);
-  }
+.contact__item:hover {
+  border-color: var(--color-accent);
+  transform: translateX(8px);
+}
 
-  @media (min-width: 768px) {
-    .investment-types {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+.contact__item-icon {
+  font-size: 1.5rem;
+}
 
-  .type-card {
-    padding: var(--space-6);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
-  }
+.contact__item-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-  .type-card:hover {
-    border-color: var(--color-brand-accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
+.contact__item-value {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
 
-  .type-card__icon {
-    font-size: 32px;
-    margin-bottom: var(--space-3);
-  }
+/* Form */
+.contact__form-wrapper {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+}
 
-  .type-card h4 {
-    margin-bottom: var(--space-2);
-  }
+.form-row {
+  display: grid;
+  gap: 1rem;
+}
 
-  .type-card p {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-3);
-  }
-
-  .risk-badge {
-    display: inline-block;
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    font-size: var(--text-xs);
-    font-weight: var(--font-semibold);
-  }
-
-  .risk-badge.high {
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-  }
-
-  .risk-badge.medium {
-    background: rgba(245, 158, 11, 0.1);
-    color: #f59e0b;
-  }
-
-  .risk-badge.low {
-    background: rgba(34, 197, 94, 0.1);
-    color: #22c55e;
-  }
-
-  /* Pyramid */
-  .pyramid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-8);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-  }
-
-  .pyramid-level {
-    width: var(--width);
-    padding: var(--space-3);
-    background: var(--bg);
-    color: #fff;
-    text-align: center;
-    font-weight: var(--font-semibold);
-    font-size: var(--text-sm);
-    border-radius: var(--radius-md);
-  }
-
-  .chart-note {
-    text-align: center;
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-top: var(--space-4);
-  }
-
-  /* Stats */
-  .stats__container {
-    text-align: center;
-  }
-
-  .stats__visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-8);
-    margin: var(--space-8) 0;
-  }
-
-  @media (min-width: 768px) {
-    .stats__visual {
-      flex-direction: row;
-      justify-content: center;
-    }
-  }
-
-  .donut-chart {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: conic-gradient(
-      #ef4444 0% 70%,
-      #f59e0b 70% 90%,
-      #3b82f6 90% 100%
-    );
-  }
-
-  .donut-hole {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background: var(--color-bg-primary);
-    border-radius: 50%;
-  }
-
-  .stats__legend {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    text-align: left;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-  }
-
-  .legend-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--color);
-  }
-
-  .stats__disclaimer {
-    font-size: var(--text-sm);
-    font-style: italic;
-    color: var(--color-text-muted);
-  }
-
-  /* Benefits */
-  .benefits__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-6);
-    margin: var(--space-8) 0;
-  }
-
-  .benefit-bubble {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    text-align: center;
-    padding: var(--space-4);
-    color: #fff;
-    transition: transform var(--transition-base);
-  }
-
-  .benefit-bubble:hover {
-    transform: scale(1.05);
-  }
-
-  .benefit-bubble.blue {
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-  }
-
-  .benefit-bubble.green {
-    background: linear-gradient(135deg, #16a34a, #22c55e);
-  }
-
-  .benefit-bubble.orange {
-    background: linear-gradient(135deg, #ea580c, #f97316);
-  }
-
-  .benefit-icon {
-    font-size: 32px;
-    margin-bottom: var(--space-2);
-  }
-
-  .benefit-bubble h3 {
-    font-size: var(--text-sm);
-    color: #fff;
-  }
-
-  .benefits__text {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: var(--space-8);
-  }
-
-  .benefits__text h3 {
-    margin-bottom: var(--space-4);
-  }
-
-  /* Founder */
-  .founder {
-    background: var(--color-bg-secondary);
-  }
-
-  .founder__container {
-    display: grid;
-    gap: var(--space-8);
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    .founder__container {
-      grid-template-columns: auto 1fr;
-    }
-  }
-
-  .founder__avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .founder__avatar span {
-    font-size: var(--text-4xl);
-    font-weight: var(--font-bold);
-    color: #fff;
-  }
-
-  .founder__content p {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-6);
-  }
-
-  /* Contact */
-  .contact__container {
-    display: grid;
-    gap: var(--space-12);
-  }
-
-  @media (min-width: 1024px) {
-    .contact__container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .contact__info p {
-    margin-bottom: var(--space-4);
-    color: var(--color-text-secondary);
-  }
-
-  .contact__email {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-lg);
-    font-weight: var(--font-semibold);
-    color: var(--color-brand-accent);
-    margin-top: var(--space-4);
-  }
-
-  .contact__email:hover {
-    text-decoration: underline;
-  }
-
-  .contact__form-wrapper {
-    padding: var(--space-8);
-  }
-
+@media (min-width: 640px) {
   .form-row {
-    display: grid;
-    gap: var(--space-4);
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  @media (min-width: 640px) {
-    .form-row {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+.form-field {
+  margin-bottom: 1.25rem;
+}
 
-  .contact__form button {
-    width: 100%;
-    margin-top: var(--space-4);
-  }
+.form-field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
 
-  .form-note {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    text-align: center;
-    margin-top: var(--space-4);
-    margin-bottom: 0;
-  }
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(45, 140, 240, 0.1);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.contact-form .btn {
+  margin-top: 0.5rem;
+}
 </style>
 
 <script>
-  // Form handling
+  // Form submission
   const form = document.getElementById('contact-form') as HTMLFormElement;
   
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn?.textContent;
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<span>Sending...</span>';
+    btn.disabled = true;
     
-    if (submitBtn) {
-      submitBtn.textContent = 'Sending...';
-      submitBtn.setAttribute('disabled', 'true');
-    }
+    // Simulate form submission (replace with actual endpoint)
+    await new Promise(resolve => setTimeout(resolve, 1500));
     
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        alert('Thank you! Your message has been sent successfully.');
-        form.reset();
-      } else {
-        throw new Error('Form submission failed');
+    alert('Thank you! Your message has been sent. We\'ll get back to you soon.');
+    form.reset();
+    btn.innerHTML = originalHTML;
+    btn.disabled = false;
+  });
+
+  // Animate on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
       }
-    } catch (error) {
-      alert('Sorry, there was an error sending your message. Please try again or email us directly.');
-    } finally {
-      if (submitBtn) {
-        submitBtn.textContent = originalText || 'Send Message';
-        submitBtn.removeAttribute('disabled');
-      }
-    }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
   });
 </script>

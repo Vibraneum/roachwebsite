@@ -2,6 +2,7 @@
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import EngagementWidgets from '../components/EngagementWidgets.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -9,9 +10,11 @@ export interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  nofollow?: boolean;
 }
 
-const { title, description, image, type } = Astro.props;
+const { title, description, image, type, noindex, nofollow } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -24,6 +27,8 @@ const { title, description, image, type } = Astro.props;
       description={description}
       image={image}
       type={type}
+      noindex={noindex}
+      nofollow={nofollow}
     />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -35,5 +40,6 @@ const { title, description, image, type } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <EngagementWidgets />
   </body>
 </html>

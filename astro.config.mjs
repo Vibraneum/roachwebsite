@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
     // Your production site URL for canonical links and sitemap
-    site: 'https://irise.vibraneum.com',
+    site: 'https://raajveer.com',
 
     integrations: [
         sitemap({
