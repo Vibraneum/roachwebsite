@@ -46,10 +46,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="stat-card__value">$350K+</div>
             <div class="stat-card__label">Under Advisory</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-card__value">100+</div>
-            <div class="stat-card__label">Happy Clients</div>
-          </div>
+
           <div class="stat-card">
             <div class="stat-card__value">₹299</div>
             <div class="stat-card__label">Consultation Fee</div>
@@ -127,16 +124,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           
           <div class="founder__bio">
             <p>
-              I'm Raajveer Nath, a passionate and forward-thinking individual deeply immersed in the world of finance and investment. With a keen analytical mindset, I've ventured into entrepreneurial projects, including launching iRise Capital – an investment advisory firm that prioritizes consultative services and innovative stock recommendations.
+              Raajveer Nath is an entrepreneurial force and the visionary behind iRise Capital. With a deep expertise in market analysis and a track record of managing over <strong>$350,000</strong> in digital assets, he bridges the gap between traditional finance and the evolving digital economy.
             </p>
+            
+            <div class="founder__ventures">
+              <div class="venture-item">
+                <div class="venture-icon">🌐</div>
+                <div class="venture-text">
+                  <h3>World Youth Media</h3>
+                  <p>A flagship initiative empowering the next generation of content creators and digital entrepreneurs through innovative media strategies.</p>
+                </div>
+              </div>
+              
+              <div class="venture-item">
+                <div class="venture-icon">🎮</div>
+                <div class="venture-text">
+                  <h3>Vibraneum Gaming</h3>
+                  <p>A high-growth YouTube scaling project and gaming channel, showcasing excellence in audience engagement and digital brand building.</p>
+                </div>
+              </div>
+            </div>
+
             <p>
-              My journey in finance began with a fascination for market dynamics and the desire to help others navigate the complex world of investments. Over the years, I've developed expertise in <strong>cryptocurrency trading, stock market analysis, and mutual fund selection</strong>.
-            </p>
-            <p>
-              At iRise Capital, I've already managed over <strong>$350,000</strong> in investments, helping clients achieve their financial goals through carefully crafted strategies. My approach combines rigorous data analysis with an understanding of each client's unique situation.
-            </p>
-            <p>
-              At the core of my vision is empowering clients with insightful guidance, blending traditional and modern approaches to create a robust investment experience. I believe that with the right guidance, <strong>anyone can build lasting wealth</strong>.
+              At iRise Capital, Raajveer's mission is to democratize sophisticated investment wisdom, making high-level financial guidance accessible to everyone who seeks to build a secure future.
             </p>
           </div>
 
@@ -196,7 +206,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="feature-card">
           <div class="feature-card__number">06</div>
           <h3>Proven Results</h3>
-          <p>With $350K+ under advisory and 100+ satisfied clients, our track record speaks for itself. Join the iRise family today.</p>
+          <p>With $350K+ under advisory, our track record speaks for itself. Join the iRise family today.</p>
         </div>
       </div>
     </div>
@@ -476,6 +486,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   line-height: 1.8;
   margin-bottom: 1rem;
 }
+
+.founder__ventures {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.venture-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--color-bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+.venture-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.venture-text h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: #0D2741;
+}
+
+.venture-text p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 
 .founder__expertise {
   margin-top: 2rem;
