@@ -350,7 +350,7 @@ const services = [
       `Include: (1) 5-bullet summary, (2) key services/offerings, (3) who it is for, (4) clear next steps / CTA, (5) important disclaimers if relevant. ` +
       `Page title: ${pageTitle}. Meta description: ${metaDescription}. URL: ${window.location.href}`;
 
-    async function copyToClipboard(text) {
+    async function copyToClipboard(text: string) {
       try {
         await navigator.clipboard.writeText(text);
         return true;
@@ -359,7 +359,7 @@ const services = [
       }
     }
 
-    function showToast(message) {
+    function showToast(message: string) {
       const el = document.createElement('div');
       el.textContent = message;
       el.style.cssText =
@@ -374,7 +374,7 @@ const services = [
     const container = document.getElementById('ai-buttons');
     if (!container) return;
 
-    providers.forEach((p) => {
+    providers.forEach((p: any) => {
       const a = document.createElement('a');
       a.href = p.mode === 'query' ? p.url + encodeURIComponent(prompt) : p.url;
       a.target = '_blank';
