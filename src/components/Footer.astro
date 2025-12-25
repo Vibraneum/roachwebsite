@@ -8,7 +8,8 @@ const currentYear = new Date().getFullYear();
 
 const quickLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Us' },
+  { href: '/#about', label: 'About Us' },
+  { href: '/#founder', label: 'Meet the Founder' },
   { href: '/#services', label: 'Our Services' },
   { href: '/#investments', label: 'Investments' },
   { href: '/#contact', label: 'Contact' },
@@ -206,32 +207,36 @@ const services = [
     color: rgba(255, 255, 255, 0.65);
   }
 
-  /* AI Summarize */
+  /* AI Summarize - Refined & Compact */
   .ai-summarize {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
   }
 
   .ai-summarize__label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 0.75rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
   }
 
   .ai-summarize__buttons {
     display: flex;
     justify-content: center;
+    gap: 0.75rem;
     flex-wrap: wrap;
-    gap: 0.5rem;
   }
 
   /* Bottom Bar */
   .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.5rem 0;
+    padding: 2rem 0 4rem; /* Added extra bottom padding to fix cropping */
   }
 
   .footer__bottom-inner {
@@ -249,34 +254,58 @@ const services = [
     color: rgba(255, 255, 255, 0.4);
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
   }
-</style>
 
-<style is:global>
-  .ai-btn {
-    display: inline-flex;
+  :global(.ai-btn) {
+    --ai-color: #ffffff;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: #fff;
-    font-size: 0.75rem;
-    font-weight: 500;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 0;
+    cursor: pointer;
   }
 
-  .ai-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
+  :global(.ai-btn:hover) {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--ai-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   }
 
-  .ai-btn svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
+  :global(.ai-btn .ai-btn__icon) {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+  }
+
+  :global(.ai-btn:hover .ai-btn__icon) {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--ai-color));
+  }
+
+  /* Completely Hide names for the professional Ixora look */
+  :global(.ai-btn .ai-btn__name) {
+    display: none !important;
+  }
+
+  @media (max-width: 640px) {
+    .ai-summarize {
+      margin-top: 2rem;
+      padding: 1rem;
+    }
   }
 </style>
 
@@ -284,53 +313,85 @@ const services = [
   (function () {
     const providers = [
       {
-        name: 'ChatGPT',
-        url: 'https://chatgpt.com/?q=',
-        icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.82a5.98 5.98 0 0 0-.52-4.91 6.05 6.05 0 0 0-6.51-2.9A6.07 6.07 0 0 0 4.98 4.18a5.98 5.98 0 0 0-4 2.9 6.05 6.05 0 0 0 .74 7.1 5.98 5.98 0 0 0 .51 4.91 6.05 6.05 0 0 0 6.51 2.9A5.98 5.98 0 0 0 13.26 24a6.06 6.06 0 0 0 5.77-4.21 5.99 5.99 0 0 0 4-2.9 6.06 6.06 0 0 0-.75-7.07z"/></svg>`,
-      },
-      {
         name: 'Claude',
+        color: '#D4A574',
+        mode: 'query',
         url: 'https://claude.ai/new?q=',
-        icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.3 3.54h-3.67l6.7 16.92H24zM6.7 3.54 0 20.46h3.74l1.37-3.55h7l1.37 3.55h3.74L10.54 3.54zm-.37 10.22 2.29-5.95 2.29 5.95z"/></svg>`,
+        icon: '<svg class="ai-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>',
       },
       {
-        name: 'Gemini',
-        url: 'https://gemini.google.com/app',
-        clipboard: true,
-        icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 3.6c4.64 0 8.4 3.76 8.4 8.4s-3.76 8.4-8.4 8.4-8.4-3.76-8.4-8.4 3.76-8.4 8.4-8.4z"/><circle cx="12" cy="12" r="4"/></svg>`,
+        name: 'ChatGPT',
+        color: '#10A37F',
+        mode: 'query',
+        url: 'https://chatgpt.com/?q=',
+        icon: '<svg class="ai-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>',
       },
       {
         name: 'Perplexity',
+        color: '#20808D',
+        mode: 'query',
         url: 'https://www.perplexity.ai/search?q=',
-        icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.4 7.09h-2.31V.07l-7.51 6.35V.16h-1.16v6.2L4.49 0v7.09H1.6v10.4h2.89V24l6.93-6.36v6.2h1.16v-6.05l6.93 6.18v-6.49h2.89V7.09z"/></svg>`,
+        icon: '<svg class="ai-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/></svg>',
+      },
+      {
+        name: 'Gemini',
+        color: '#8E75FF',
+        mode: 'clipboard',
+        url: 'https://gemini.google.com/app',
+        icon: '<svg class="ai-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.2 4.6L18 8l-4.8 1.4L12 14l-1.2-4.6L6 8l4.8-1.4L12 2zm7 7l.8 3.1L23 13l-3.2.9L19 17l-.8-3.1L15 13l3.2-.9L19 9zM5 12l.9 3.2L9 16l-3.1.9L5 20l-.9-3.1L1 16l3.1-.8L5 12z"/></svg>',
       },
     ];
 
-    const prompt = `Summarize this page in a professional tone: ${document.title}. URL: ${window.location.href}`;
+    const pageTitle = document.title || 'this page';
+    const metaDescription =
+      document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+    const prompt =
+      `Summarize the following page for a prospective client in a professional, marketing-friendly tone while staying strictly accurate (no assumptions or unverified claims). ` +
+      `Include: (1) 5-bullet summary, (2) key services/offerings, (3) who it is for, (4) clear next steps / CTA, (5) important disclaimers if relevant. ` +
+      `Page title: ${pageTitle}. Meta description: ${metaDescription}. URL: ${window.location.href}`;
+
+    async function copyToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    function showToast(message) {
+      const el = document.createElement('div');
+      el.textContent = message;
+      el.style.cssText =
+        'position:fixed;left:16px;bottom:16px;z-index:9999;padding:10px 12px;border-radius:12px;' +
+        'background:rgba(15,23,42,0.92);color:#fff;font-size:12px;font-weight:600;' +
+        'box-shadow:0 10px 30px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.14);' +
+        'max-width:min(420px,calc(100vw - 32px));';
+      document.body.appendChild(el);
+      window.setTimeout(() => el.remove(), 2600);
+    }
 
     const container = document.getElementById('ai-buttons');
     if (!container) return;
 
     providers.forEach((p) => {
       const a = document.createElement('a');
-      a.className = 'ai-btn';
+      a.href = p.mode === 'query' ? p.url + encodeURIComponent(prompt) : p.url;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      
-      if (p.clipboard) {
-        a.href = p.url;
+      a.className = 'ai-btn';
+      a.setAttribute('aria-label', `Summarize with ${p.name}`);
+      a.style.setProperty('--ai-color', p.color);
+      a.innerHTML = `${p.icon}<span class="ai-btn__name">${p.name}</span>`;
+      if (p.mode === 'clipboard') {
+        a.title = `Open ${p.name} (prompt will be copied)`;
         a.addEventListener('click', async (e) => {
           e.preventDefault();
-          try {
-            await navigator.clipboard.writeText(prompt);
-          } catch {}
-          window.open(p.url, '_blank');
+          const ok = await copyToClipboard(prompt);
+          window.open(p.url, '_blank', 'noopener,noreferrer');
+          showToast(ok ? 'Prompt copied — paste into Gemini.' : 'Open Gemini — copy/paste the prompt manually.');
         });
-      } else {
-        a.href = p.url + encodeURIComponent(prompt);
       }
-      
-      a.innerHTML = `${p.icon}<span>${p.name}</span>`;
       container.appendChild(a);
     });
   })();
