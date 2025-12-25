@@ -418,15 +418,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <input type="hidden" name="subject" value="New Contact Form Submission - iRise Capital">
             <input type="hidden" name="from_name" value="iRise Capital Website">
             <input type="hidden" name="to_email" value="irisecapital@gmail.com">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             
             <div class="form-row">
               <div class="form-field">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="first_name" placeholder="John" required>
-              </div>
-              <div class="form-field">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="last_name" placeholder="Doe" required>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
               </div>
             </div>
             <div class="form-field">
@@ -1541,6 +1538,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     btn.disabled = true;
 
     const formData = new FormData(form);
+    
+    // Convert to JSON
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
@@ -1564,7 +1563,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
         form.reset();
       } else {
-        throw new Error(res.message);
+        console.error('Web3Forms Error:', res);
+        throw new Error(res.message || 'Submission failed');
       }
     } catch (error) {
       console.error(error);
