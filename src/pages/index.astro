@@ -422,8 +422,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             
             <div class="form-row">
               <div class="form-field">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" placeholder="John" required>
+              </div>
+              <div class="form-field">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
               </div>
             </div>
             <div class="form-field">
@@ -432,7 +436,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <div class="form-field">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+91 9876543210">
+              <div class="phone-input-group">
+                <select name="country_code" id="country_code" class="country-select">
+                  <option value="+91">IN +91</option>
+                  <option value="+1">US +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+971">UAE +971</option>
+                  <option value="+65">SG +65</option>
+                  <option value="+61">AU +61</option>
+                  <option value="+1">CA +1</option>
+                </select>
+                <input type="tel" id="phone" name="phone" placeholder="9876543210" maxlength="10" pattern="[0-9]{10}" required inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);">
+              </div>
             </div>
             <div class="form-field">
               <label for="message">Your Message</label>
@@ -1325,11 +1340,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .range-legend {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .legend-item {
@@ -1377,6 +1394,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+}
+
+.range-details {
+  margin-top: 5rem;
 }
 
 .detail-block h3 {
@@ -1519,6 +1540,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   color: var(--color-text-muted);
 }
 
+.phone-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.country-select {
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text-primary);
+  /* width: 120px; */
+  min-width: 110px;
+  cursor: pointer;
+  appearance: none; /* keep it standard looking or style arrow if needed */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1em;
+  padding-right: 2rem;
+}
+
+.country-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
 .contact-form .btn {
   margin-top: 0.5rem;
 }
@@ -1532,12 +1581,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    // Custom Validation
+    const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+    const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement;
+    
+    // Strict Email Regex
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(emailInput.value)) {
+      if (result) {
+        result.style.display = 'block';
+        result.style.color = 'var(--color-danger)';
+        result.innerHTML = 'Please enter a valid email address.';
+      }
+      return;
+    }
+
+    // Strict 10-digit Phone Validation
+    if (phoneInput.value.length !== 10) {
+      if (result) {
+        result.style.display = 'block';
+        result.style.color = 'var(--color-danger)';
+        result.innerHTML = 'Please enter a valid 10-digit phone number.';
+      }
+      return;
+    }
+
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
     const originalHTML = btn.innerHTML;
     btn.innerHTML = '<span>Sending...</span>';
     btn.disabled = true;
 
     const formData = new FormData(form);
+    
+    // Combine names if needed by backend, or send as is. 
+    // Web3forms will take all fields.
     
     // Convert to JSON
     const object = Object.fromEntries(formData);
