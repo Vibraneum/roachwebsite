@@ -179,7 +179,6 @@
   (function () {
     const DAY_KEY = new Date().toISOString().slice(0, 10);
     const exitKey = `irise_exit_intent_${DAY_KEY}`;
-    const reminderKey = `irise_reminder_${DAY_KEY}`;
 
     const exitEl = document.getElementById('exit-intent');
     const reminderEl = document.getElementById('reminder');
@@ -206,7 +205,6 @@
     function openReminder() {
       if (!reminderEl) return;
       reminderEl.hidden = false;
-      try { localStorage.setItem(reminderKey, '1'); } catch {}
     }
 
     function closeReminder() {
@@ -244,19 +242,17 @@
       });
     }
 
-    // Reminder toast (all devices), but rate-limited
-    window.setTimeout(() => {
-      try {
-        if (localStorage.getItem(reminderKey)) return;
-      } catch {}
-      // Don't show if user is already at contact anchor
-      if (window.location.hash === '#contact') return;
+    // Recurring Reminder toast (every 40 seconds)
+    window.setInterval(() => {
+      // Don't show if already visible or if user is at contact anchor
+      if (!reminderEl || !reminderEl.hidden || window.location.hash === '#contact') return;
+      
       openReminder();
       // auto-hide after 12s if not interacted
       window.setTimeout(() => {
         closeReminder();
       }, 12000);
-    }, 45000);
+    }, 40000);
   })();
 </script>
 
