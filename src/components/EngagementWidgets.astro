@@ -177,9 +177,6 @@
 
 <script>
   (function () {
-    const DAY_KEY = new Date().toISOString().slice(0, 10);
-    const exitKey = `irise_exit_intent_${DAY_KEY}`;
-
     const exitEl = document.getElementById('exit-intent');
     const reminderEl = document.getElementById('reminder');
 
@@ -191,7 +188,6 @@
       if (!exitEl) return;
       exitEl.hidden = false;
       document.body.style.overflow = 'hidden';
-      try { localStorage.setItem(exitKey, '1'); } catch {}
       // focus close for accessibility
       (exitEl.querySelector('[data-close="exit"]') as HTMLElement)?.focus();
     }
@@ -230,28 +226,18 @@
 
     // Exit intent (desktop only)
     if (!isTouch) {
-      let already = false;
       document.addEventListener('mouseleave', (e) => {
-        if (already) return;
+        if (!exitEl || !exitEl.hidden) return;
         if (e.clientY > 0) return;
-        try {
-          if (localStorage.getItem(exitKey)) return;
-        } catch {}
-        already = true;
         openExit();
       });
     }
 
-    // Recurring Reminder toast (every 40 seconds)
+    // Recurring Large Popup (every 40 seconds)
     window.setInterval(() => {
       // Don't show if already visible or if user is at contact anchor
-      if (!reminderEl || !reminderEl.hidden || window.location.hash === '#contact') return;
-      
-      openReminder();
-      // auto-hide after 12s if not interacted
-      window.setTimeout(() => {
-        closeReminder();
-      }, 12000);
+      if (!exitEl || !exitEl.hidden || window.location.hash === '#contact') return;
+      openExit();
     }, 40000);
   })();
 </script>
