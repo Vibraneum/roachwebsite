@@ -292,13 +292,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
           <div class="founder__bio">
             <p>
-              I am Raajveer Nath, Founder and CEO of iRise Capital, an investment advisory firm based in Hyderabad, India. We specialize in consultative, research-driven strategies across traditional and emerging asset classes, integrating robust financial fundamentals with modern market dynamics to deliver disciplined, data-backed guidance for long-term capital growth.
+              Raajveer Nath is the Founder and CEO of <strong>iRise Capital</strong>, an investment advisory firm based in Hyderabad, India. The firm specializes in consultative, research-driven strategies across both traditional and emerging asset classes, integrating robust financial fundamentals with modern market dynamics to deliver disciplined, data-backed guidance for long-term capital growth.
             </p>
             <p>
-              With experience overseeing more than $350,000 in digital assets under advisory, I apply a structured, risk-aware approach to volatile markets, aligning innovative opportunities with prudent portfolio construction. My work prioritizes clarity, education, and accessibility, empowering clients to navigate complex landscapes with informed decisions.
+              With experience overseeing more than <strong>$350,000 in digital assets under advisory</strong>, Raajveer applies a structured, risk-aware approach to volatile markets, aligning innovative opportunities with prudent portfolio construction. His work emphasizes clarity, education, and accessibility, empowering clients to navigate complex financial landscapes through informed decision-making.
             </p>
             <p>
-              Beyond iRise Capital, I lead World Youth Media, dedicated to digital content and creator empowerment, and Vibraneum Gaming, focused on immersive audience engagement and digital brand development. These initiatives embody my vision of building resilient, future-ready platforms at the intersection of finance, technology, and media.
+              Beyond iRise Capital, Raajveer leads <strong>World Youth Media</strong>, an organization dedicated to digital content and creator empowerment, and <strong>Vibraneum Gaming</strong>, a venture focused on immersive audience engagement and digital brand development. These initiatives reflect his broader vision of building resilient, future-ready platforms at the intersection of finance, technology, and media.
             </p>
             
             <p class="founder__mission">
@@ -322,17 +322,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="founder__bio">
           <p>
-            I am Unnabh Khatri, Co-Founder and COO at iRise Capital, an investment advisory firm based in Hyderabad, India. I am an aspiring finance professional and entrepreneur with hands-on experience in financial markets, trading, and portfolio management.
+            Unnabh Khatri is the <strong>Co-Founder and COO of iRise Capital</strong>, an investment advisory firm based in Hyderabad, India. He is an aspiring finance professional and entrepreneur with practical experience in financial markets, trading, and portfolio management.
           </p>
           <p>
-            I actively manage an investment portfolio of over $150,000 in Forex and Stocks, applying principles such as asset allocation, risk-adjusted returns, market structure analysis, volatility management, and capital preservation enabling informed decision-making across varying market conditions. I have also been part of a team involved in the development of an algorithmic trading platform, contributing to strategy logic, backtesting, and systematic trading workflows.
+            Unnabh actively manages an investment portfolio of over <strong>$150,000 in Forex and Stocks</strong>, applying principles of asset allocation, risk-adjusted returns, market structure analysis, volatility management, and capital preservation to enable informed decision-making across varying market conditions. He has also contributed to the development of an <strong>algorithmic trading platform</strong>, working on strategy logic, backtesting, and systematic trading workflows.
           </p>
           <p>
-            At iRise Capital, my core focus is on providing clients with clarity and a structured roadmap to organize and manage their funds effectively. I emphasize education, transparency, and accessibility, helping individuals understand market dynamics, navigate complex financial situations, and make informed investment decisions.
+            At iRise Capital, Unnabh’s core focus lies in providing clients with clarity and a structured roadmap to organize and manage their funds effectively. He emphasizes <strong>education, transparency, and accessibility</strong>, guiding individuals to better understand market dynamics, navigate complex financial situations, and make informed investment decisions.
           </p>
           
           <p class="founder__mission">
-            "My ultimate goal is to empower clients to become financially independent, market-aware, and confident in managing their own investments."
+            "My mission is to bridge the gap between institutional-level financial insight and individual investors, empowering them to make data-driven, confident, and sustainable investment choices."
           </p>
         </div>
       </div>
@@ -443,7 +443,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <input type="hidden" name="access_key" value="ae1b3397-62d6-4e5a-86fa-7d9bfe655a4a">
             <input type="hidden" name="subject" value="New Contact Form Submission - iRise Capital">
             <input type="hidden" name="from_name" value="iRise Capital Website">
-            <input type="hidden" name="to_email" value="irisecapital@gmail.com">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             
             <div class="form-row">
@@ -1639,29 +1638,97 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Custom Validation
     const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
     const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement;
-    
-    // Strict Email Regex
+
+    // 1. Layer 1: Gibberish Guard (Entropy Check)
+    const isGibberish = (str: string) => {
+      if (str.length < 5) return false;
+      const smashRegex = /asdf|qwer|zxcv|1234|dfgh|jkl|qwerty|qaz|wsx|edc/i;
+      if (smashRegex.test(str)) return true;
+      
+      // Check for vowel density (real names usually have ~30-50% vowels)
+      const vowels = (str.match(/[aeiou]/gi) || []).length;
+      const vowelRatio = vowels / str.length;
+      
+      // Check for long consonant strings (e.g., "uiehifhehf" has "hifh", "fhehf")
+      const longConsonants = /[^aeiou]{5,}/i.test(str);
+      
+      // Check for too many repeated characters
+      const repeated = /(.)\1{3,}/.test(str);
+      
+      return (vowelRatio < 0.15 && str.length > 8) || longConsonants || repeated;
+    };
+
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(emailInput.value)) {
-      if (result) {
-        result.style.display = 'block';
-        result.style.color = 'var(--color-danger)';
-        result.innerHTML = 'Please enter a valid email address.';
-      }
+    const disposableDomains = ['mailinator.com', 'guerrillamail.com', 'tempmail.com', 'trashmail.com', '10minutemail.com', 'yopmail.com', 'sharklasers.com', 'dispostable.com', 'getnada.com', 'tmail.ws'];
+    
+    const emailPrefix = emailInput.value.split('@')[0]?.toLowerCase();
+    const emailDomain = emailInput.value.split('@')[1]?.toLowerCase();
+
+    if (!emailRegex.test(emailInput.value) || isGibberish(emailPrefix)) {
+      showError('Please enter a valid, professional email address.');
+      return;
+    }
+    
+    if (disposableDomains.includes(emailDomain)) {
+      showError('Please use a permanent email address (like Gmail, Outlook, or Work Email).');
       return;
     }
 
-    // Strict 10-digit Phone Validation
-    if (phoneInput.value.length !== 10) {
+    // 2. Layer 2: Real-time Existence Check (AbstractAPI)
+    const ABSTRACT_API_KEY = 'a2d0c4e0c6bc45ad89abfb9fd961f530';
+    if (ABSTRACT_API_KEY) {
+      try {
+        const verifyRes = await fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=${ABSTRACT_API_KEY}&email=${emailInput.value}`);
+        if (verifyRes.status === 401) {
+          console.error('AbstractAPI Error: Your API key is invalid or not yet verified.');
+        } else if (verifyRes.ok) {
+          const data = await verifyRes.json();
+          if (data.deliverability === 'UNDELIVERABLE') {
+            showError('This email address does not exist. Please check for typos.');
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('API Existence check skipped (Offline/Error):', err);
+      }
+    }
+
+    // 2. Phone Verification (Strict check based on selected country)
+    const countryCode = (form.querySelector('select[name="country_code"]') as HTMLSelectElement).value;
+    const phoneValue = phoneInput.value;
+    
+    // Pattern & Length Mapping
+    const validations: Record<string, { len: number, pattern: RegExp }> = {
+      '+91': { len: 10, pattern: /^[6-9]\d{9}$/ }, // India: starts with 6-9
+      '+1':  { len: 10, pattern: /^[2-9]\d{9}$/ }, // US/CA: 10 digits
+      '+44': { len: 10, pattern: /^7\d{9}$/ },    // UK Mobile: 10 digits starting with 7
+      '+971': { len: 9,  pattern: /^5\d{8}$/ },   // UAE: 9 digits starting with 5 (mobile)
+      '+65': { len: 8,  pattern: /^[89]\d{7}$/ }, // SG: 8 digits starting with 8-9
+      '+61': { len: 9,  pattern: /^4\d{8}$/ },    // AU: 9 digits starting with 4
+    };
+
+    const config = validations[countryCode];
+    if (config) {
+      if (phoneValue.length !== config.len || !config.pattern.test(phoneValue)) {
+        showError(`Please enter a valid ${config.len}-digit ${countryCode} number.`);
+        return;
+      }
+    } else if (phoneValue.length < 8 || phoneValue.length > 12) {
+      showError('Please enter a valid phone number.');
+      return;
+    }
+
+    function showError(msg: string) {
       if (result) {
         result.style.display = 'block';
         result.style.color = 'var(--color-danger)';
-        result.innerHTML = 'Please enter a valid 10-digit phone number.';
+        result.innerHTML = msg;
+        
+        // Clear error after 4s
+        setTimeout(() => { if (result) result.style.display = 'none'; }, 4000);
       }
-      return;
     }
 
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
