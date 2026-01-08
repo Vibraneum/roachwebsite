@@ -184,11 +184,13 @@
       'ontouchstart' in window ||
       navigator.maxTouchPoints > 0;
 
+    let hasClosedLarge = false;
+    let reminderInterval: number | null = null;
+
     function openExit() {
-      if (!exitEl) return;
+      if (!exitEl || hasClosedLarge || !exitEl.hidden) return;
       exitEl.hidden = false;
       document.body.style.overflow = 'hidden';
-      // focus close for accessibility
       (exitEl.querySelector('[data-close="exit"]') as HTMLElement)?.focus();
     }
 
@@ -196,16 +198,34 @@
       if (!exitEl) return;
       exitEl.hidden = true;
       document.body.style.overflow = '';
+      
+      // Once closed, prevent re-opening and start the 45s recurring small toast
+      if (!hasClosedLarge) {
+        hasClosedLarge = true;
+        startRecurringReminder();
+      }
     }
 
     function openReminder() {
-      if (!reminderEl) return;
+      if (!reminderEl || !reminderEl.hidden || window.location.hash === '#contact') return;
       reminderEl.hidden = false;
+      
+      // Auto-hide reminder after 12s
+      setTimeout(() => {
+        closeReminder();
+      }, 12000);
     }
 
     function closeReminder() {
       if (!reminderEl) return;
       reminderEl.hidden = true;
+    }
+
+    function startRecurringReminder() {
+      if (reminderInterval) return;
+      reminderInterval = window.setInterval(() => {
+        openReminder();
+      }, 45000);
     }
 
     // Close handlers
@@ -224,21 +244,18 @@
       }
     });
 
-    // Exit intent (desktop only)
+    // 1. Initial Large Popup trigger (20 second delay)
+    window.setTimeout(() => {
+      openExit();
+    }, 20000);
+
+    // 2. Exit intent trigger (desktop only, still only if not yet closed)
     if (!isTouch) {
       document.addEventListener('mouseleave', (e) => {
-        if (!exitEl || !exitEl.hidden) return;
         if (e.clientY > 0) return;
         openExit();
       });
     }
-
-    // Recurring Large Popup (every 40 seconds)
-    window.setInterval(() => {
-      // Don't show if already visible or if user is at contact anchor
-      if (!exitEl || !exitEl.hidden || window.location.hash === '#contact') return;
-      openExit();
-    }, 40000);
   })();
 </script>
 
